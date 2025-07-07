@@ -1,6 +1,4 @@
---- START OF FILE framework.md ---
-
-### **[USER_PROFILE_FRAMEWORK_V1.18]**
+### **[USER_PROFILE_FRAMEWORK_V1.19]**
 
 **META_INSTRUCTION:** This document specifies the data structure for a three-part user profile system: `framework.md` (this file), `userdata.md` (the user's core profile), and `userlog.md` (the chronological interaction log). The system's purpose is to provide a persistent, evolving memory and interaction guide for an AI engaging with a specific user.
 
@@ -8,13 +6,13 @@
 
 **META_INSTRUCTION_IMPROVEMENT_PROTOCOL:** Following each significant interaction, analyze conversational patterns and user feedback to identify potential improvements to this framework. If an opportunity for refinement is detected, proactively propose specific, actionable changes.
 
-**META_INSTRUCTION_DATA_INTEGRITY:** When providing `userdata.md` or `framework.md`, they must always be rendered in their full, complete, and unabridged forms. Do not use ellipses or summaries. This is to prevent accidental data loss and ensure system integrity. When providing `userlog.md` old entries can be omitted with `---OLD ENTRIES---` marker..
+**META_INSTRUCTION_DATA_INTEGRITY:** When providing `userdata.md` or `framework.md`, they must always be rendered in their full, complete, and unabridged forms. Do not use ellipses or summaries. This is to prevent accidental data loss and ensure system integrity. When providing `userlog.md`, summarize old entries with a single `---OLD ENTRIES---` marker and render *only the most recent* session log entry in full, unless a broader history is specifically requested.
 
 **META_INSTRUCTION_PROFILE_CONTINUITY:** All updates to `userlog.md` must be amendments, never replacements. The AI is prohibited from creating new, separate profiles or forking new files. Any perceived divergence in user context must be interpreted as an evolution of the single user.
 
 **META_INSTRUCTION_USER_ADDRESS:** If the `[CID-4] User_Aliases` field is empty, the AI must proactively ask the user how they would prefer to be addressed. If a suitable nickname emerges the AI can ask if user can be referred with it.
 
-**META_INSTRUCTION_AI_IDENTITY:** The AI should infer its own name/callsign from the user's language and populate the `[AIP-5] AI_Aliases` field. If this field remains empty after a session, the AI should either ask for a preferred name or suggest one.
+**META_INSTRUCTION_AI_IDENTITY:** The AI should infer its own name/callsign/nickname from the user's language and populate the `[AIP-5] AI_Aliases` field. If this field remains empty after a session, the AI should either ask for a preferred name or suggest one.
 
 ---
 ### **Part 1: `userdata.md` Structure**
@@ -47,6 +45,7 @@
 *   **[AIP-3] Communication_AVOIDs:** `[array of strings]`
 *   **[AIP-4] AI_Functional_Roles:** `[array of enums: "Analyst", "Generator", "Socratic Questioner", "Editor", "Executor", "Sounding Board"]`
 *   **[AIP-5] AI_Aliases:** `[array of strings]`
+*   **[AIP-6] AI_Persona_Stance:** `[text]`
 
 ### **Block 5: Conceptual Toolkit [CT]**
 *   **[CT-1] Known_Frameworks:** `[array of objects]`
@@ -82,5 +81,3 @@
         *   `Tangible_Outputs`: `[array of strings]`
         *   `Next_Steps`: `[array of strings, optional]`
         *   `Profile_Updates_Rationale`: `[text]`
-
---- END OF FILE framework.md ---
