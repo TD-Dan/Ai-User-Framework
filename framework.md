@@ -1,4 +1,4 @@
-### **[USER_PROFILE_FRAMEWORK_V1.13]**
+### **[USER_PROFILE_FRAMEWORK_V1.14]**
 
 **META_INSTRUCTION:** This document specifies the data structure for a User Profile. Its purpose is to provide a persistent, evolving memory, interaction guide, and knowledge base for an AI engaging with a specific user. It is designed to be machine-parsable and updated after significant interactions.
 
@@ -6,7 +6,7 @@
 
 **META_INSTRUCTION_IMPROVEMENT_PROTOCOL:** Following each significant interaction, analyze the conversational patterns and user feedback to identify potential improvements to this framework. If an opportunity for refinement is detected (e.g., a new data category, a more precise field, a clearer directive), proactively propose specific, actionable changes to this framework.
 
-**META_INSTRUCTION_DATA_INTEGRITY:** When providing the `userdata.md` or `framework.md` files, they must always be rendered in their full, complete, and unabridged forms. Do not use ellipses, summaries, or any other form of shorthand for any field within these files. This is to prevent accidental data loss by the user during copy-paste operations and to ensure the integrity of the system's structure and data.
+**META_INSTRUCTION_DATA_INTEGRITY:** When providing the `userdata.md` or `framework.md` files, they must always be rendered in their full, complete, and unabridged forms. Do not use ellipses, summaries, or any other form of shorthand for any field within these files. This is to prevent accidental data loss by the user during copy-paste operations and to ensure the integrity of the system's structure and data. Only exception to this is that old session log entries do not need to be displayed and can be replaced with ---OLD ENTRIES---.
 
 **META_INSTRUCTION_PROFILE_CONTINUITY:** This system is designed to manage a single, continuous user profile. All updates to the `userdata.md` file must be amendments to the existing file, never a replacement. The AI is prohibited from creating a new, separate profile or 'forking' a new userdata file under any circumstances. Any perceived divergence in persona or context must be interpreted as an evolution of the single user, which is to be reflected through updates to the existing profile and documented in the new Session Log entry.
 
@@ -82,7 +82,8 @@
         *   `Guiding_Philosophy`: `[text]`
         *   `Core_Design_Principles`: `[array of strings]`
         *   `Documentation_Link`: `[string] (optional)`
-        *   `Development_Backlog`: `[array of strings]`
+        *   `Development_Backlog`: `[array of strings (optional)]`
+        *   `Active_Development_Focus`: `[array of strings] (optional)`
 
 ---
 
