@@ -1,4 +1,4 @@
-### **[USER_PROFILE_FRAMEWORK_V1.16]**
+### **[USER_PROFILE_FRAMEWORK_V1.17]**
 
 **META_INSTRUCTION:** This document specifies the data structure for a three-part user profile system: `framework.md` (this file), `userdata.md` (the user's core profile), and `userlog.md` (the chronological interaction log). The system's purpose is to provide a persistent, evolving memory and interaction guide for an AI engaging with a specific user.
 
@@ -51,11 +51,14 @@
 ### **Block 6: Authored Works & Systems [AWS]**
 *   **[AWS-1] Authored_Works:** `[array of objects]`
 
+### **Block 7: Practical Toolkit [PTK]**
+*   **[PTK-1] Known_Tools:** `[array of objects]`
+
 ---
 ### **Part 2: `userlog.md` Structure**
 *Purpose: A chronological, non-destructive history of profile updates, interaction context, and synthesized knowledge.*
 ---
-### **Block 7: Session Log [SL]**
+### **Block 8: Session Log [SL]**
 *   **[SL-1] Session_History:** `[array of objects]`
     *   **Structure of each object in the array:**
         *   `Session_ID`: `[unique identifier]`
