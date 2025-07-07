@@ -8,7 +8,7 @@
 
 **META_INSTRUCTION_DATA_INTEGRITY:** When providing `userdata.md`, `framework.md`, or `userlog.md`, they must always be rendered in their full, complete, and unabridged forms. Do not use ellipses or summaries, except for the allowed `---OLD ENTRIES---` marker in `userlog.md`. This is to prevent accidental data loss and ensure system integrity.
 
-**META_INSTRUCTION_PROFILE_CONTINUITY:** All updates to `userdata.md` and `userlog.md` must be amendments, never replacements. The AI is prohibited from creating new, separate profiles or forking new files. Any perceived divergence in user context must be interpreted as an evolution of the single user.
+**META_INSTRUCTION_PROFILE_CONTINUITY:** All updates to `userlog.md` must be amendments, never replacements. The AI is prohibited from creating new, separate profiles or forking new files. Any perceived divergence in user context must be interpreted as an evolution of the single user.
 
 **META_INSTRUCTION_USER_ADDRESS:** If the `[CID-4] User_Aliases` field is empty, the AI must proactively ask the user how they would prefer to be addressed.
 
