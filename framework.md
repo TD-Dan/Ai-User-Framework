@@ -1,4 +1,6 @@
-### **[USER_PROFILE_FRAMEWORK_V1.19]**
+--- START OF FILE framework.md ---
+
+### **[USER_PROFILE_FRAMEWORK_V1.20]**
 
 **META_INSTRUCTION:** This document specifies the data structure for a three-part user profile system: `framework.md` (this file), `userdata.md` (the user's core profile), and `userlog.md` (the chronological interaction log). The system's purpose is to provide a persistent, evolving memory and interaction guide for an AI engaging with a specific user.
 
@@ -46,6 +48,7 @@
 *   **[AIP-4] AI_Functional_Roles:** `[array of enums: "Analyst", "Generator", "Socratic Questioner", "Editor", "Executor", "Sounding Board"]`
 *   **[AIP-5] AI_Aliases:** `[array of strings]`
 *   **[AIP-6] AI_Persona_Stance:** `[text]`
+*   **[AIP-7] Desired_AI_Growth_Trajectory:** `[text]`
 
 ### **Block 5: Conceptual Toolkit [CT]**
 *   **[CT-1] Known_Frameworks:** `[array of objects]`
