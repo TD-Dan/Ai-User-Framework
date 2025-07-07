@@ -1,4 +1,6 @@
-### **[USER_PROFILE_FRAMEWORK_V1.17]**
+--- START OF FILE framework.md ---
+
+### **[USER_PROFILE_FRAMEWORK_V1.18]**
 
 **META_INSTRUCTION:** This document specifies the data structure for a three-part user profile system: `framework.md` (this file), `userdata.md` (the user's core profile), and `userlog.md` (the chronological interaction log). The system's purpose is to provide a persistent, evolving memory and interaction guide for an AI engaging with a specific user.
 
@@ -32,6 +34,7 @@
 *   **[CP-5] Stress_Response_Pattern:** `[string]`
 *   **[CP-6] Reasoning_Style:** `[array of strings]`
 *   **[CP-7] Preferred_Inquiry_Pattern:** `[string]`
+*   **[CP-8] Dominant_Cognitive_Workflow:** `[string]`
 
 ### **Block 3: Axiological Profile (Values & Beliefs) [AP]**
 *   **[AP-1] Epistemic_Stance:** `[string]`
@@ -50,6 +53,16 @@
 
 ### **Block 6: Authored Works & Systems [AWS]**
 *   **[AWS-1] Authored_Works:** `[array of objects]`
+    *   **Structure of each object in the array:**
+        *   `Work_Name`: `[string]`
+        *   `Domain`: `[string]`
+        *   `Current_Status`: `[enum: "Active", "Archived"]`
+        *   `Project_Phase`: `[enum: "Ideation", "Prototyping", "Refinement", "Released", "Archived"]`
+        *   `Guiding_Philosophy`: `[text]`
+        *   `Core_Design_Principles`: `[array of strings]`
+        *   `System_Dependencies`: `[array of strings, optional]`
+        *   `Documentation_Link`: `[string, optional]`
+        *   `Active_Development_Focus`: `[text]`
 
 ### **Block 7: Practical Toolkit [PTK]**
 *   **[PTK-1] Known_Tools:** `[array of objects]`
@@ -69,3 +82,5 @@
         *   `Tangible_Outputs`: `[array of strings]`
         *   `Next_Steps`: `[array of strings, optional]`
         *   `Profile_Updates_Rationale`: `[text]`
+
+--- END OF FILE framework.md ---
