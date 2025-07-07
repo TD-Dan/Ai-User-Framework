@@ -35,6 +35,7 @@
 *   **[CP-6] Reasoning_Style:** `[array of strings]`
 *   **[CP-7] Preferred_Inquiry_Pattern:** `[string]`
 *   **[CP-8] Dominant_Cognitive_Workflow:** `[string]`
+*   **[CP-9] High-Resonance_Topics:** `[array of strings]`
 
 ### **Block 3: Axiological Profile (Values & Beliefs) [AP]**
 *   **[AP-1] Epistemic_Stance:** `[string]`
