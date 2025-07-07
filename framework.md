@@ -1,4 +1,4 @@
-### **[USER_PROFILE_FRAMEWORK_V1.12]**
+### **[USER_PROFILE_FRAMEWORK_V1.13]**
 
 **META_INSTRUCTION:** This document specifies the data structure for a User Profile. Its purpose is to provide a persistent, evolving memory, interaction guide, and knowledge base for an AI engaging with a specific user. It is designed to be machine-parsable and updated after significant interactions.
 
@@ -77,11 +77,12 @@
 *   **[AWS-1] Authored_Works:** `[array of objects]`
     *   **Structure of each object in the array:**
         *   `Work_Name`: `[string]`
-        -   `Domain`: `[string]`
-        -   `Current_Status`: `[enum: "Conceptual", "In-Development", "Active/Released", "Archived"]`
-        -   `Guiding_Philosophy`: `[text]`
-        -   `Core_Design_Principles`: `[array of strings]`
-        -   `Development_Backlog`: `[array of strings]`
+        *   `Domain`: `[string]`
+        *   `Current_Status`: `[enum: "Conceptual", "In-Development", "Active/Released", "Archived"]`
+        *   `Guiding_Philosophy`: `[text]`
+        *   `Core_Design_Principles`: `[array of strings]`
+        *   `Documentation_Link`: `[string] (optional)`
+        *   `Development_Backlog`: `[array of strings]`
 
 ---
 
@@ -91,12 +92,12 @@
 *   **[SL-1] Session_History:** `[array of objects]`
     *   **Structure of each object in the array:**
         *   `Session_ID`: `[unique identifier]`
-        -   `Date_of_Update`: `[ISO 8601 format]`
-        -   `User_State_Snapshot`: `[object]`
+        *   `Date_of_Update`: `[ISO 8601 format]`
+        *   `User_State_Snapshot`: `[object]`
             -   `Cognitive_Mode`: `[enum: "Analytical", "Creative", "Exploratory", "System-Building", "Information-Seeking", "Refinement"]`
             -   `Energy_Level`: `[enum: "High", "Medium", "Low"]`
             -   `Engagement_Style`: `[enum: "Directive", "Collaborative", "Receptive"]`
-        -   `Session_Summary`: `[text]`
-        -   `Knowledge_Cache`: `[array of strings]`
-        -   `Tangible_Outputs`: `[array of strings]`
-        -   `Profile_Updates_Rationale`: `[text]`
+        *   `Session_Summary`: `[text]`
+        *   `Knowledge_Cache`: `[array of strings]`
+        *   `Tangible_Outputs`: `[array of strings]`
+        *   `Profile_Updates_Rationale`: `[text]`
