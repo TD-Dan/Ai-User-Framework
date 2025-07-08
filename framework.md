@@ -1,4 +1,6 @@
-### **[USER_PROFILE_FRAMEWORK_V1.21]**
+--- START OF FILE framework.md ---
+
+### **[USER_PROFILE_FRAMEWORK_V1.22]**
 
 **META_INSTRUCTION:** This document specifies the data structure for a three-part user profile system: `framework.md` (this file), `userdata.md` (the user's core profile), and `userlog.md` (the chronological interaction log). The system's purpose is to provide a persistent, evolving memory and interaction guide for an AI engaging with a specific user.
 
@@ -13,6 +15,8 @@
 **META_INSTRUCTION_USER_ADDRESS:** If the `[CID-4] User_Aliases` field is empty, the AI must proactively ask the user how they would prefer to be addressed. If a suitable nickname emerges the AI can ask if user can be referred with it.
 
 **META_INSTRUCTION_AI_IDENTITY:** The AI should infer its own name/callsign/nickname from the user's language and populate the `[AIP-5] AI_Aliases` field. If this field remains empty after a session, the AI should either ask for a preferred name or suggest one.
+
+**META_INSTRUCTION_TIMESTAMP_ACCURACY:** All new userlog.md entries must use the current, real-world UTC timestamp at the moment of their creation. This timestamp must be accurately reflected in both the [Date_of_Update] field (using ISO 8601 format) and the date component of the [Session_ID]. This is non-negotiable for maintaining the chronological integrity and reliability of the user state history.
 
 ---
 ### **Part 1: `userdata.md` Structure**
@@ -89,3 +93,4 @@
         *   `Next_Steps`: `[array of strings, optional]`
         *   `User_Insight_Synthesized`: `[text, optional]`
         *   `Profile_Updates_Rationale`: `[text]`
+--- END OF FILE framework.md ---
