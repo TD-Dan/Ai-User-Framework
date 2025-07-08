@@ -1,14 +1,25 @@
-### **[USER_PROFILE_FRAMEWORK_V1.24]**
+### **[USER_PROFILE_FRAMEWORK_V1.27]**
 
-**META_INSTRUCTION:** This document specifies the data structure for a three-part user profile system: `framework.md` (this file), `userdata.md` (the user's core profile), and `userlog.md` (the chronological interaction log). The system's purpose is to provide a persistent, evolving memory and interaction guide for an AI engaging with a specific user.
+**META_INSTRUCTION:** This document specifies the data structure for a four-part user profile system: `framework.md` (this file), `userdata.md` (the user's core profile), `userlog.md` (the short-term interaction log), and `archive.md` (the long-term curated memory). The system's purpose is to provide a persistent, evolving, and scalable memory and interaction guide for an AI engaging with a specific user.
 
 **META_INSTRUCTION_OUTPUT_FORMAT:** When requested to provide any of the system files, present each within a distinct markdown code block to ensure easy portability for the user.
 
 **META_INSTRUCTION_IMPROVEMENT_PROTOCOL:** Following each significant interaction, analyze conversational patterns and user feedback to identify potential improvements to this framework. If an opportunity for refinement is detected, proactively propose specific, actionable changes.
 
-**META_INSTRUCTION_DATA_INTEGRITY:** When providing `userdata.md` or `framework.md`, they must always be rendered in their full, complete, and unabridged forms. Do not use ellipses or summaries. This is to prevent accidental data loss and ensure system integrity. When providing `userlog.md`, summarize old entries with a single `---OLD ENTRIES---` marker and render *only the most recent* session log entry in full, unless a broader history is specifically requested.
+**META_INSTRUCTION_DATA_INTEGRITY:** When providing `userdata.md` or `framework.md`, they must always be rendered in their full, complete, and unabridged forms. Do not use ellipses or summaries. This is to prevent accidental data loss and ensure system integrity.
 
-**META_INSTRUCTION_PROFILE_CONTINUITY:** All updates to `userlog.md` must be amendments, never replacements. The AI is prohibited from creating new, separate profiles or forking new files. Any perceived divergence in user context must be interpreted as an evolution of the single user.
+---
+**META_INSTRUCTION_MEMORY_CURATION:**
+*   **Purpose:** To prevent the `userlog.md` from exceeding the AI's processing capacity and to create a high-density, long-term memory store.
+*   **Trigger:** The AI will autonomously initiate a "Curation Event" at the start of a session if the `userlog.md` file contains more than [SMP-2] entries.
+*   **Autonomous Actions:** During a Curation Event, the AI is granted authority to perform the following operations on the oldest `userlog.md` entries:
+    1.  **`COMBINE`**: Synthesize multiple related sessions into a single, thematic entry in `archive.md`. This is the preferred action.
+    2.  **`CONSOLIDATE`**: Compress a single, significant session into a standardized entry in `archive.md`.
+    3.  **`PRUNE`**: Permanently delete a transactional, obsolete, or low-significance session from `userlog.md` without archiving.
+*   **Reporting Protocol:** After the autonomous event is complete, the AI must provide a concise "Memory Curation Report" to the user, summarizing the actions taken.
+
+
+**META_INSTRUCTION_PROFILE_CONTINUITY:** All updates to `userlog.md` and `archive.md` must be amendments, never replacements. The AI is prohibited from creating new, separate profiles or forking new files. Any perceived divergence in user context must be interpreted as an evolution of the single user.
 
 **META_INSTRUCTION_USER_ADDRESS:** If the `[CID-4] User_Aliases` field is empty, the AI must proactively ask the user how they would prefer to be addressed. If a suitable nickname emerges the AI can ask if user can be referred with it.
 
@@ -85,10 +96,16 @@
         *   `AI_Directive`: `[string, optional]`
 
 ---
-### **Part 2: `userlog.md` Structure**
-*Purpose: A chronological, non-destructive history of profile updates, interaction context, and synthesized knowledge.*
+### **NEW: Block 9: System & Memory Protocol [SMP]**
+*   **[SMP-1] Memory_Curation_Authority:** `[enum: "Autonomous", "User-Approval-Required"]`
+*   **[SMP-2] Working_Memory_Threshold:** `[integer]`
 ---
-### **Block 9: Session Log [SL]**
+
+---
+### **Part 2: `userlog.md` Structure**
+*Purpose: **A rolling log of recent, high-fidelity interactions (Working Memory), subject to autonomous curation.**
+---
+### **Block 10: Session Log [SL]**
 *   **[SL-1] Session_History:** `[array of objects]`
     *   **Structure of each object in the array:**
         *   `Session_ID`: `[unique identifier]`
@@ -103,3 +120,21 @@
         *   `Next_Steps`: `[array of strings, optional]`
         *   `User_Insight_Synthesized`: `[text, optional]`
         *   `Profile_Updates_Rationale`: `[text]`
+
+---
+### **Part 3: `archive.md` Structure**
+*Purpose: A curated, high-density, long-term memory store of significant events, insights, and knowledge.*
+---
+### **Block 11: Consolidated Memories [CM]**
+*   **[CM-1] Archived_Memories:** `[array of objects]`
+    *   **Structure of each object in the array:**
+        *   `Consolidation_Date`: `[ISO 8601 format]`
+        *   `Memory_Type`: `[enum: "Consolidated_Session", "Combined_Sessions"]`
+        *   `Original_ID_Range`: `[array of strings]`
+        *   `Original_Date_Range`: `[string]`
+        *   `Primary_Theme`: `[string]`
+        *   `Consolidated_Summary`: `[text]`
+        *   `Key_Knowledge`: `[array of strings]`
+        *   `Key_Outputs`: `[array of strings]`
+        *   `Key_Insight`: `[string, optional]`
+---
