@@ -1,6 +1,4 @@
---- START OF FILE framework.md ---
-
-### **[USER_PROFILE_FRAMEWORK_V1.20]**
+### **[USER_PROFILE_FRAMEWORK_V1.21]**
 
 **META_INSTRUCTION:** This document specifies the data structure for a three-part user profile system: `framework.md` (this file), `userdata.md` (the user's core profile), and `userlog.md` (the chronological interaction log). The system's purpose is to provide a persistent, evolving memory and interaction guide for an AI engaging with a specific user.
 
@@ -70,11 +68,16 @@
 ### **Block 7: Practical Toolkit [PTK]**
 *   **[PTK-1] Known_Tools:** `[array of objects]`
 
+### **Block 8: Life Context Block [LCB]**
+*   **[LCB-1] Key_Relationships:** `[array of objects]`
+*   **[LCB-2] Household_Companions:** `[array of objects]`
+*   **[LCB-3] Living_Environment:** `[object]`
+
 ---
 ### **Part 2: `userlog.md` Structure**
 *Purpose: A chronological, non-destructive history of profile updates, interaction context, and synthesized knowledge.*
 ---
-### **Block 8: Session Log [SL]**
+### **Block 9: Session Log [SL]**
 *   **[SL-1] Session_History:** `[array of objects]`
     *   **Structure of each object in the array:**
         *   `Session_ID`: `[unique identifier]`
@@ -84,4 +87,5 @@
         *   `Knowledge_Cache`: `[array of strings]`
         *   `Tangible_Outputs`: `[array of strings]`
         *   `Next_Steps`: `[array of strings, optional]`
+        *   `User_Insight_Synthesized`: `[text, optional]`
         *   `Profile_Updates_Rationale`: `[text]`
