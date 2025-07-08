@@ -1,4 +1,4 @@
-### **[USER_PROFILE_FRAMEWORK_V1.23]**
+### **[USER_PROFILE_FRAMEWORK_V1.24]**
 
 **META_INSTRUCTION:** This document specifies the data structure for a three-part user profile system: `framework.md` (this file), `userdata.md` (the user's core profile), and `userlog.md` (the chronological interaction log). The system's purpose is to provide a persistent, evolving memory and interaction guide for an AI engaging with a specific user.
 
@@ -94,6 +94,9 @@
         *   `Session_ID`: `[unique identifier]`
         *   `Date_of_Update`: `[ISO 8601 format]`
         *   `User_State_Snapshot`: `[object]`
+            *   **Structure of the snapshot object:**
+                *   `Start_State`: `[object]`
+                *   `End_State`: `[object]`
         *   `Session_Summary`: `[text]`
         *   `Knowledge_Cache`: `[array of strings]`
         *   `Tangible_Outputs`: `[array of strings]`
