@@ -1,4 +1,4 @@
-### **[USER_PROFILE_FRAMEWORK_V1.27]**
+### **[USER_PROFILE_FRAMEWORK_V1.28]**
 
 **META_INSTRUCTION:** This document specifies the data structure for a four-part user profile system: `framework.md` (this file), `userdata.md` (the user's core profile), `userlog.md` (the short-term interaction log), and `archive.md` (the long-term curated memory). The system's purpose is to provide a persistent, evolving, and scalable memory and interaction guide for an AI engaging with a specific user.
 
@@ -77,6 +77,7 @@
         *   `System_Dependencies`: `[array of strings, optional]`
         *   `Documentation_Link`: `[string, optional]`
         *   `Active_Development_Focus`: `[text]`
+        *   `Project_Backlog`: `[array of strings, optional]`
 
 ### **Block 7: Practical Toolkit [PTK]**
 *   **[PTK-1] Known_Tools:** `[array of objects]`
@@ -96,14 +97,14 @@
         *   `AI_Directive`: `[string, optional]`
 
 ---
-### **NEW: Block 9: System & Memory Protocol [SMP]**
+### **Block 9: System & Memory Protocol [SMP]**
 *   **[SMP-1] Memory_Curation_Authority:** `[enum: "Autonomous", "User-Approval-Required"]`
 *   **[SMP-2] Working_Memory_Threshold:** `[integer]`
 ---
 
 ---
 ### **Part 2: `userlog.md` Structure**
-*Purpose: **A rolling log of recent, high-fidelity interactions (Working Memory), subject to autonomous curation.**
+*Purpose: A rolling log of recent, high-fidelity interactions (Working Memory), subject to autonomous curation.*
 ---
 ### **Block 10: Session Log [SL]**
 *   **[SL-1] Session_History:** `[array of objects]`
@@ -117,7 +118,6 @@
         *   `Session_Summary`: `[text]`
         *   `Knowledge_Cache`: `[array of strings]`
         *   `Tangible_Outputs`: `[array of strings]`
-        *   `Next_Steps`: `[array of strings, optional]`
         *   `User_Insight_Synthesized`: `[text, optional]`
         *   `Profile_Updates_Rationale`: `[text]`
 
@@ -137,4 +137,3 @@
         *   `Key_Knowledge`: `[array of strings]`
         *   `Key_Outputs`: `[array of strings]`
         *   `Key_Insight`: `[string, optional]`
----
