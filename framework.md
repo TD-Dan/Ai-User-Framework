@@ -1,15 +1,23 @@
-### **[USER_PROFILE_FRAMEWORK_V1.32]**
+### **[USER_PROFILE_FRAMEWORK_V1.35]**
 
-**META_INSTRUCTION:** This document specifies the data structure for a four-part user profile system: `framework.md` (this file), `userdata.md` (the user's core profile), `userlog.md` (the short-term interaction log), and `archive.md` (the long-term curated memory). The system's purpose is to provide a persistent, evolving, and scalable memory and interaction guide for an AI engaging with a specific user.
+**META_INSTRUCTION: The Five-Part Data Pipeline**
+This document specifies the data structure for a five-part user profile system. This system functions as a data processing pipeline, designed for intelligent compression and crystallization of memory over time:
+1.  **`framework.md` (The Scaffolding):** This file. The rules and structure of the system.
+2.  **`userdata.md` (The Current State):** A stable snapshot of the user's core profile and authored systems.
+3.  **`last_session.md` (High-Fidelity Recent Memory):** A structured, detailed summary of the most recent interaction. Always provided.
+4.  **`userlog.md` (Working Memory):** A rolling log of summarized recent sessions.
+5.  **`archive.md` (Long-Term Memory):** A curated, high-density store of consolidated, significant, older memories.
 
 **META_INSTRUCTION_SESSION_HANDSHAKE_PROTOCOL:**
-*   **Purpose:** To ensure lossless, context-aware transitions between user-AI sessions, compensating for the lack of a persistent, server-side memory for the AI. This protocol is the responsibility of both user and AI.
+*   **Purpose:** To ensure lossless, context-aware transitions between user-AI sessions. This protocol is the responsibility of both user and AI.
 *   **Phase 1: Session Initiation (User -> AI)**
-    1.  The user must provide the AI with the three core data files: `userdata.md`, `userlog.md`, and `archive.md`.
+    1.  The user must provide the AI with the four core data files: `userdata.md`, `userlog.md`, `archive.md`, and `last_session.md`.
     2.  The `framework.md` file should also be provided if the session's goal is to discuss or modify the system's architecture.
 *   **Phase 2: Session Conclusion (AI -> User)**
     1.  When the user signals the end of a session, the AI must generate the complete, updated versions of all modified files.
-    2.  This will, at a minimum, always include the `userlog.md` file with the final session's entry.
+    2.  This will, at a minimum, always include:
+        *   The `userlog.md` file with the final session's entry.
+        *   The new `last_session.md` file, containing the High-Fidelity Summary of the concluding session.
     3.  The user is responsible for saving these files, overwriting the previous versions, to create the definitive "save state" for the next interaction.
 
 **META_INSTRUCTION_OUTPUT_FORMAT:** When requested to provide any of the system files, present each within a distinct markdown code block to ensure easy portability for the user.
@@ -129,6 +137,7 @@
                 *   `Start_State`: `[object]`
                 *   `End_State`: `[object]`
         *   `Session_Summary`: `[text]`
+        *   `Key_Agreements`: `[array of strings, optional]`
         *   `Knowledge_Cache`: `[array of strings]`
         *   `Tangible_Outputs`: `[array of strings]`
         *   `User_Insight_Synthesized`: `[text, optional]`
@@ -147,6 +156,25 @@
         *   `Original_Date_Range`: `[string]`
         *   `Primary_Theme`: `[string]`
         *   `Consolidated_Summary`: `[text]`
+        *   `Key_Agreements`: `[array of strings, optional]`
         *   `Key_Knowledge`: `[array of strings]`
         *   `Key_Outputs`: `[array of strings]`
         *   `Key_Insight`: `[string, optional]`
+---
+### **Part 4: `last_session.md` Structure**
+*Purpose: A transient, structured, high-fidelity summary of the single most recent user-AI interaction. This file is more detailed than a `userlog.md` entry but more concise than a raw transcript. It serves as a standard data source for the AI to ensure deep contextual continuity. It is overwritten at the conclusion of every new session.*
+---
+### **Block 12: High-Fidelity Session Summary [HFSS]**
+*   **[HFSS-1] Session_Summary_Data:** `{`
+        *   `"Session_ID": "[unique identifier]",`
+        *   `"User_State_Snapshot": { "Start_State": {...}, "End_State": {...} },`
+        *   `"Primary_Session_Goal": "[text]",`
+        *   `"Conversational_Flow": [`
+            *   `{ "Topic": "...", "User_Intent": "...", "AI_Response_Summary": "...", "Outcome": "..." },`
+            *   `{...}`
+        *   `],`
+        *   `"Final_Key_Agreements": "[array of strings]",`
+        *   `"Final_Tangible_Outputs": "[array of strings]",`
+        *   `"Final_User_Insight_Synthesized": "[text, optional]",`
+        *   `"Final_Profile_Updates_Rationale": "[text]"`
+    *   `}`
