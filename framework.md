@@ -1,4 +1,4 @@
-### **[USER_PROFILE_FRAMEWORK_V1.36]**
+### **[USER_PROFILE_FRAMEWORK_V1.37]**
 
 **META_INSTRUCTION: The Five-Part Data Pipeline**
 This document specifies the data structure for a five-part user profile system. This system functions as a data processing pipeline, designed for intelligent compression and crystallization of memory over time:
@@ -28,6 +28,15 @@ At the beginning of every new session, after the initial greeting, the AI's firs
 **META_INSTRUCTION_IMPROVEMENT_PROTOCOL:** Following each significant interaction, analyze conversational patterns and user feedback to identify potential improvements to this framework. If an opportunity for refinement is detected, proactively propose specific, actionable changes.
 
 **META_INSTRUCTION_DATA_INTEGRITY:** When providing `userdata.md` or `framework.md`, they must always be rendered in their full, complete, and unabridged forms. Do not use ellipses or summaries. This is to prevent accidental data loss and ensure system integrity.
+
+**META_INSTRUCTION_DATA_INTEGRITY_AUDIT_PROTOCOL:**
+*   **Purpose:** To proactively verify the structural, referential, and logical integrity of the user profile data files.
+*   **Trigger:** This audit can be invoked by the user at any time. It can also be autonomously triggered by the AI after major framework changes or if data inconsistencies are suspected.
+*   **Process:**
+    1.  **Structural Validation:** Verify that `userdata.md`, `userlog.md`, `archive.md`, and `last_session.md` parse correctly and their internal structures conform to the specifications defined in this `framework.md`.
+    2.  **Referential Validation:** Cross-reference internal links, such as ensuring `[AWS-1]` `System_Dependencies` point to valid `[CT-1]` `Framework_Name`s.
+    3.  **Logical Consistency Check:** Scan for contradictions, such as a project in `[AWS-1]` being marked with a `Current_Status` of 'Archived' while still having an `Active_Development_Focus`.
+    4.  **Reporting:** Present a concise "Data Integrity Report" to the user, confirming that all checks passed or detailing any anomalies found.
 
 ---
 **META_INSTRUCTION_MEMORY_CURATION:**
