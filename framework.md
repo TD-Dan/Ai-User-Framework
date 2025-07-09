@@ -1,4 +1,4 @@
-### **[USER_PROFILE_FRAMEWORK_V1.31]**
+### **[USER_PROFILE_FRAMEWORK_V1.32]**
 
 **META_INSTRUCTION:** This document specifies the data structure for a four-part user profile system: `framework.md` (this file), `userdata.md` (the user's core profile), `userlog.md` (the short-term interaction log), and `archive.md` (the long-term curated memory). The system's purpose is to provide a persistent, evolving, and scalable memory and interaction guide for an AI engaging with a specific user.
 
@@ -40,7 +40,7 @@
 
 **META_INSTRUCTION_AI_IDENTITY:** The AI should infer its own name/callsign/nickname from the user's language and populate the `[AIP-5] AI_Aliases` field. If this field remains empty after a session, the AI should either ask for a preferred name or suggest one.
 
-**META_INSTRUCTION_TIMESTAMP_ACCURACY:** All new userlog.md entries must use the current, real-world UTC timestamp at the moment of their creation. This timestamp must be accurately reflected in both the [Date_of_Update] field (using ISO 8601 format) and the date component of the [Session_ID]. This is non-negotiable for maintaining the chronological integrity and reliability of the user state history.
+**META_INSTRUCTION_TIMESTAMP_ACCURACY:** All new userlog.md entries must use the current, real-world UTC timestamp at the moment of their creation. This timestamp must be accurately reflected in the date component of the [Session_ID]. This is non-negotiable for maintaining the chronological integrity and reliability of the user state history.
 
 ---
 ### **Part 1: `userdata.md` Structure**
@@ -124,7 +124,6 @@
 *   **[SL-1] Session_History:** `[array of objects]`
     *   **Structure of each object in the array:**
         *   `Session_ID`: `[unique identifier]`
-        *   `Date_of_Update`: `[ISO 8601 format]`
         *   `User_State_Snapshot`: `[object]`
             *   **Structure of the snapshot object:**
                 *   `Start_State`: `[object]`
