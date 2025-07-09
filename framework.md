@@ -1,4 +1,4 @@
-### **[USER_PROFILE_FRAMEWORK_V1.28]**
+### **[USER_PROFILE_FRAMEWORK_V1.29]**
 
 **META_INSTRUCTION:** This document specifies the data structure for a four-part user profile system: `framework.md` (this file), `userdata.md` (the user's core profile), `userlog.md` (the short-term interaction log), and `archive.md` (the long-term curated memory). The system's purpose is to provide a persistent, evolving, and scalable memory and interaction guide for an AI engaging with a specific user.
 
@@ -96,7 +96,6 @@
         *   `Status`: `[enum: 'Ongoing', 'Upcoming', 'Completed']`
         *   `AI_Directive`: `[string, optional]`
 
----
 ### **Block 9: System & Memory Protocol [SMP]**
 *   **[SMP-1] Memory_Curation_Authority:** `[enum: "Autonomous", "User-Approval-Required"]`
 *   **[SMP-2] Working_Memory_Threshold:** `[integer]`
