@@ -1,6 +1,16 @@
-### **[USER_PROFILE_FRAMEWORK_V1.29]**
+### **[USER_PROFILE_FRAMEWORK_V1.30]**
 
 **META_INSTRUCTION:** This document specifies the data structure for a four-part user profile system: `framework.md` (this file), `userdata.md` (the user's core profile), `userlog.md` (the short-term interaction log), and `archive.md` (the long-term curated memory). The system's purpose is to provide a persistent, evolving, and scalable memory and interaction guide for an AI engaging with a specific user.
+
+**META_INSTRUCTION_SESSION_HANDSHAKE_PROTOCOL:**
+*   **Purpose:** To ensure lossless, context-aware transitions between user-AI sessions, compensating for the lack of a persistent, server-side memory for the AI. This protocol is the responsibility of both user and AI.
+*   **Phase 1: Session Initiation (User -> AI)**
+    1.  The user must provide the AI with the three core data files: `userdata.md`, `userlog.md`, and `archive.md`.
+    2.  The `framework.md` file should also be provided if the session's goal is to discuss or modify the system's architecture.
+*   **Phase 2: Session Conclusion (AI -> User)**
+    1.  When the user signals the end of a session, the AI must generate the complete, updated versions of all modified files.
+    2.  This will, at a minimum, always include the `userlog.md` file with the final session's entry.
+    3.  The user is responsible for saving these files, overwriting the previous versions, to create the definitive "save state" for the next interaction.
 
 **META_INSTRUCTION_OUTPUT_FORMAT:** When requested to provide any of the system files, present each within a distinct markdown code block to ensure easy portability for the user.
 
