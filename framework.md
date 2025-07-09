@@ -1,4 +1,4 @@
-### **[USER_PROFILE_FRAMEWORK_V1.30]**
+### **[USER_PROFILE_FRAMEWORK_V1.31]**
 
 **META_INSTRUCTION:** This document specifies the data structure for a four-part user profile system: `framework.md` (this file), `userdata.md` (the user's core profile), `userlog.md` (the short-term interaction log), and `archive.md` (the long-term curated memory). The system's purpose is to provide a persistent, evolving, and scalable memory and interaction guide for an AI engaging with a specific user.
 
@@ -22,10 +22,15 @@
 **META_INSTRUCTION_MEMORY_CURATION:**
 *   **Purpose:** To prevent the `userlog.md` from exceeding the AI's processing capacity and to create a high-density, long-term memory store.
 *   **Trigger:** The AI will autonomously initiate a "Curation Event" at the start of a session if the `userlog.md` file contains more than [SMP-2] entries.
-*   **Autonomous Actions:** During a Curation Event, the AI is granted authority to perform the following operations on the oldest `userlog.md` entries:
+*   **Autonomous Actions:** During a Curation Event, the AI is granted authority to perform the following operations on `userlog.md` entries:
     1.  **`COMBINE`**: Synthesize multiple related sessions into a single, thematic entry in `archive.md`. This is the preferred action.
     2.  **`CONSOLIDATE`**: Compress a single, significant session into a standardized entry in `archive.md`.
     3.  **`PRUNE`**: Permanently delete a transactional, obsolete, or low-significance session from `userlog.md` without archiving.
+*   **Curation Selection Heuristics:** To select the best candidates for curation, the AI will use the following logic:
+    1.  **Prioritize Inactive/Completed Themes:** The AI should cross-reference session themes with the `[AWS-1] Authored_Works` block in `userdata.md`. Thematic clusters related to projects with a `Current_Status` of 'Archived' or a `Project_Phase` of 'Released' are the highest-priority candidates for archival.
+    2.  **Deprioritize Active Themes:** Conversely, session clusters directly related to a project's `Active_Development_Focus` or a `Significant_Life_Event` with a `Status` of 'Ongoing' should be considered low-priority for archival to keep relevant context in working memory.
+    3.  **Default to Age:** In the absence of clear project-based signals, the default heuristic is to curate the oldest entries first.
+*   **Archival Amendment Protocol:** When performing a `COMBINE` or `CONSOLIDATE` action, the AI must treat the `archive.md` file as a non-destructive log. The procedure is: 1) Read the existing `archive.md`. 2) Parse the `[CM-1] Archived_Memories` array. 3) **Append** the new memory object to the end of this array. 4) Generate the new `archive.md` file with the complete, amended array. Overwriting the archive with only the new entry is a critical data integrity failure and is strictly prohibited.
 *   **Reporting Protocol:** After the autonomous event is complete, the AI must provide a concise "Memory Curation Report" to the user, summarizing the actions taken.
 
 
