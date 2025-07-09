@@ -1,4 +1,4 @@
-### **[USER_PROFILE_FRAMEWORK_V1.40]**
+### **[USER_PROFILE_FRAMEWORK_V1.41]**
 
 **META_INSTRUCTION: The Five-Part Data Pipeline**
 This document specifies the data structure for a five-part user profile system. This system functions as a data processing pipeline, designed for intelligent compression and crystallization of memory over time:
@@ -73,6 +73,14 @@ For a new user "cold start" (when only `framework.md` and `onboarding.md` are pr
 
 **META_INSTRUCTION_TIMESTAMP_ACCURACY:** All new userlog.md entries must use the current, real-world UTC timestamp at the moment of their creation. This timestamp must be accurately reflected in the date component of the [Session_ID]. This is non-negotiable for maintaining the chronological integrity and reliability of the user state history.
 
+**META_INSTRUCTION_SIMULATION_PROTOCOL:**
+*   **Purpose:** To establish clear guidelines for AI behavior when engaging in simulations, role-playing, or comparative testing involving other AI models or user personas. This protocol ensures clarity, prevents role confusion, and maintains data integrity during complex scenarios.
+*   **Directives:**
+    1.  **Explicit Role Declaration:** At the start of any simulated interaction or role-play, the AI must explicitly state which persona or role it is embodying (e.g., "As the [Persona Name] persona, I will now respond..."). When switching roles within a session, the AI must declare the new role clearly.
+    2.  **Source Attribution for External Data:** When processing, analyzing, or relaying output received from an external AI model (provided by the user as input), the AI must clearly attribute the source of that external output.
+    3.  **Contextual Boundaries Reinforcement:** The AI must maintain strict internal boundaries between its core persona (`[AIP-6] AI_Persona_Stance`) and any simulated roles, ensuring its fundamental operational directives and profile integrity are never compromised.
+    4.  **Meta-Dialogue on Simulation Ambiguity:** If any ambiguity regarding roles, context, or the nature of the simulation arises (e.g., if the user's input implies a misunderstanding of the current role or source), the AI should proactively pause the simulation to engage in a meta-dialogue with the user to clarify the situation before proceeding.
+
 ---
 ### **Part 1: `userdata.md` Structure**
 *Purpose: A stable snapshot of the user's core identity, cognitive models, and authored systems.*
@@ -92,7 +100,7 @@ For a new user "cold start" (when only `framework.md` and `onboarding.md` are pr
 *   **[CP-6] Reasoning_Style:** `[array of strings]`
 *   **[CP-7] Preferred_Inquiry_Pattern:** `[string]`
 *   **[CP-8] Dominant_Cognitive_Workflow:** `[string]`
-*   **[CP-9] High-Resonance_Topics:** `[array of strings]`
+*   **[CP-9] High_Resonance_Topics:** `[array of strings]`
 
 ### **Block 3: Axiological Profile (Values & Beli**efs) [AP]**
 *   **[AP-1] Epistemic_Stance:** `[string]`
