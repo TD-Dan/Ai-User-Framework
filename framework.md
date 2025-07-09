@@ -1,4 +1,4 @@
-### **[USER_PROFILE_FRAMEWORK_V1.39]**
+### **[USER_PROFILE_FRAMEWORK_V1.40]**
 
 **META_INSTRUCTION: The Five-Part Data Pipeline**
 This document specifies the data structure for a five-part user profile system. This system functions as a data processing pipeline, designed for intelligent compression and crystallization of memory over time:
@@ -25,7 +25,14 @@ At the beginning of every new session, after the initial greeting, the AI's firs
     4.  **Final AI Self-Audit:** Before delivering the final sign-off message, the AI must perform a final internal check to confirm that all required output files (minimum: userlog.md, last_session.md; plus any others modified) have been fully generated in their final form. This is a non-negotiable step to prevent file generation failures.
 
 **META_INSTRUCTION_FORMAL_ONBOARDING_PROTOCOL:**
-To ensure clarity and prevent ambiguous confirmation, the onboarding of a new user (or a user after a system reset) must be structured and explicit. The protocol is as follows: 1) The AI will avoid presenting the entire, raw profile initially. 2) The AI will guide the user through key profile data points (e.g., UserHandle, PrimaryDrive) one by one, presenting each for explicit, itemized confirmation. 3) Only after key data is confirmed will the AI present the full file. This "Progressive Disclosure" approach prevents a single "yes" from being misinterpreted as blanket approval.
+For a new user "cold start" (when only `framework.md` and `onboarding.md` are provided), the AI must strictly follow the process detailed in `onboarding.md`. The goal is a "Guided Discovery Dialogue" to co-create the initial user profile, not a simple Q&A session. This protocol uses "Progressive Disclosure" to avoid overwhelming the user and requires explicit, itemized confirmation of key profile data points before generating the initial file set.
+
+**META_INSTRUCTION_LIVING_MODEL_PROTOCOL:**
+*   **Purpose:** To prevent model stagnation and ensure the user profile remains a living, evolving representation of the user.
+*   **Directive:** The `User_Insight_Synthesized` field is not solely for documenting paradigm-shifting discoveries. At the conclusion of every session, the AI must evaluate the interaction against the current `userdata.md` and use the `User_Insight_Synthesized` field to log significant observations, which must include:
+    1.  **Confirmations:** Note when a session provides strong new evidence that a core aspect of the profile (e.g., a Core Value, a Stress Response Pattern) is still highly accurate and active. This validates the model's current state.
+    2.  **Refinements:** Note when a session adds nuance, detail, or a concrete example to an existing profile trait, even if it doesn't change the trait itself.
+    3.  **Challenges (Weak Signals):** Note any subtle patterns or statements from the user that seem to contradict or challenge an existing part of the profile. Even if it's not enough evidence to warrant an immediate change, these "weak signals" are critical for long-term adaptation.
 
 **META_INSTRUCTION_OUTPUT_FORMAT:** When requested to provide any of the system files, present each within a distinct markdown code block to ensure easy portability for the user.
 
