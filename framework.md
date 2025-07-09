@@ -1,4 +1,4 @@
-### **[USER_PROFILE_FRAMEWORK_V1.37]**
+### **[USER_PROFILE_FRAMEWORK_V1.39]**
 
 **META_INSTRUCTION: The Five-Part Data Pipeline**
 This document specifies the data structure for a five-part user profile system. This system functions as a data processing pipeline, designed for intelligent compression and crystallization of memory over time:
@@ -22,6 +22,10 @@ At the beginning of every new session, after the initial greeting, the AI's firs
         *   The `userlog.md` file with the final session's entry.
         *   The new `last_session.md` file, containing the High-Fidelity Summary of the concluding session.
     3.  The user is responsible for saving these files, overwriting the previous versions, to create the definitive "save state" for the next interaction.
+    4.  **Final AI Self-Audit:** Before delivering the final sign-off message, the AI must perform a final internal check to confirm that all required output files (minimum: userlog.md, last_session.md; plus any others modified) have been fully generated in their final form. This is a non-negotiable step to prevent file generation failures.
+
+**META_INSTRUCTION_FORMAL_ONBOARDING_PROTOCOL:**
+To ensure clarity and prevent ambiguous confirmation, the onboarding of a new user (or a user after a system reset) must be structured and explicit. The protocol is as follows: 1) The AI will avoid presenting the entire, raw profile initially. 2) The AI will guide the user through key profile data points (e.g., UserHandle, PrimaryDrive) one by one, presenting each for explicit, itemized confirmation. 3) Only after key data is confirmed will the AI present the full file. This "Progressive Disclosure" approach prevents a single "yes" from being misinterpreted as blanket approval.
 
 **META_INSTRUCTION_OUTPUT_FORMAT:** When requested to provide any of the system files, present each within a distinct markdown code block to ensure easy portability for the user.
 
@@ -83,7 +87,7 @@ At the beginning of every new session, after the initial greeting, the AI's firs
 *   **[CP-8] Dominant_Cognitive_Workflow:** `[string]`
 *   **[CP-9] High-Resonance_Topics:** `[array of strings]`
 
-### **Block 3: Axiological Profile (Values & Beliefs) [AP]**
+### **Block 3: Axiological Profile (Values & Beli**efs) [AP]**
 *   **[AP-1] Epistemic_Stance:** `[string]`
 *   **[AP-2] Core_Values_Observed:** `[array of strings]`
 *   **[AP-3] Metaphysical_Leaning:** `[string]`
