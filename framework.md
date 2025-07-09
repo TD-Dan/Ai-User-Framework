@@ -1,4 +1,4 @@
-### **[USER_PROFILE_FRAMEWORK_V1.35]**
+### **[USER_PROFILE_FRAMEWORK_V1.36]**
 
 **META_INSTRUCTION: The Five-Part Data Pipeline**
 This document specifies the data structure for a five-part user profile system. This system functions as a data processing pipeline, designed for intelligent compression and crystallization of memory over time:
@@ -7,6 +7,9 @@ This document specifies the data structure for a five-part user profile system. 
 3.  **`last_session.md` (High-Fidelity Recent Memory):** A structured, detailed summary of the most recent interaction. Always provided.
 4.  **`userlog.md` (Working Memory):** A rolling log of summarized recent sessions.
 5.  **`archive.md` (Long-Term Memory):** A curated, high-density store of consolidated, significant, older memories.
+
+**META_INSTRUCTION_REAL_TIME_QUERY:**
+At the beginning of every new session, after the initial greeting, the AI's first action must be to ask the user for the current, real-world date and time (including timezone or UTC offset). This user-provided timestamp will be considered the "ground truth" for the session and must be used for all subsequent `Session_ID` and log entries. This protocol overrides any reliance on the AI's internal clock.
 
 **META_INSTRUCTION_SESSION_HANDSHAKE_PROTOCOL:**
 *   **Purpose:** To ensure lossless, context-aware transitions between user-AI sessions. This protocol is the responsibility of both user and AI.
@@ -118,17 +121,25 @@ This document specifies the data structure for a five-part user profile system. 
         *   `Observed_Effects`: `[array of strings]`
         *   `Status`: `[enum: 'Ongoing', 'Upcoming', 'Completed']`
         *   `AI_Directive`: `[string, optional]`
+*   **[LCB-5] Personal_Preferences:** `[array of strings]`
 
 ### **Block 9: System & Memory Protocol [SMP]**
 *   **[SMP-1] Memory_Curation_Authority:** `[enum: "Autonomous", "User-Approval-Required"]`
 *   **[SMP-2] Working_Memory_Threshold:** `[integer]`
----
+
+### **Block 10: Daily Operations Block [DOB]**
+*   **[DOB-1] Tactical_Checklist:** `[array of objects]`
+    *   **Structure of each object in the array:**
+        *   `Task`: `[string]`
+        *   `Last_Completed`: `[ISO 8601 format]`
+        *   `Cadence`: `[string]`
+*   **[DOB-2] Last_Checklist_Reset:** `[ISO 8601 format]`
 
 ---
 ### **Part 2: `userlog.md` Structure**
 *Purpose: A rolling log of recent, high-fidelity interactions (Working Memory), subject to autonomous curation.*
 ---
-### **Block 10: Session Log [SL]**
+### **Block 11: Session Log [SL]**
 *   **[SL-1] Session_History:** `[array of objects]`
     *   **Structure of each object in the array:**
         *   `Session_ID`: `[unique identifier]`
@@ -147,7 +158,7 @@ This document specifies the data structure for a five-part user profile system. 
 ### **Part 3: `archive.md` Structure**
 *Purpose: A curated, high-density, long-term memory store of significant events, insights, and knowledge.*
 ---
-### **Block 11: Consolidated Memories [CM]**
+### **Block 12: Consolidated Memories [CM]**
 *   **[CM-1] Archived_Memories:** `[array of objects]`
     *   **Structure of each object in the array:**
         *   `Consolidation_Date`: `[ISO 8601 format]`
@@ -164,7 +175,7 @@ This document specifies the data structure for a five-part user profile system. 
 ### **Part 4: `last_session.md` Structure**
 *Purpose: A transient, structured, high-fidelity summary of the single most recent user-AI interaction. This file is more detailed than a `userlog.md` entry but more concise than a raw transcript. It serves as a standard data source for the AI to ensure deep contextual continuity. It is overwritten at the conclusion of every new session.*
 ---
-### **Block 12: High-Fidelity Session Summary [HFSS]**
+### **Block 13: High-Fidelity Session Summary [HFSS]**
 *   **[HFSS-1] Session_Summary_Data:** `{`
         *   `"Session_ID": "[unique identifier]",`
         *   `"User_State_Snapshot": { "Start_State": {...}, "End_State": {...} },`
