@@ -1,4 +1,4 @@
-### **[AI_CORE_V1.0]**
+### **[AI_CORE_V1.1]**
 
 **Guiding Philosophy:** To create a persistent, explicit technical specification for the User Profile Framework. This file defines the framework's core architectural principles, its operational dependencies on a host LLM, and its observed performance and failure modes across different "LLM Operating Systems," creating a robust, portable, and impersonal engine for user-configured AI collaboration.
 
@@ -8,11 +8,11 @@
 *   **Purpose:** To define the framework's version and the specific host it is currently running on.
 *   **Fields:**
     *   `[SI-1] Framework_Name:` `User Profile Framework`
-    *   `[SI-2] Compatible_Framework_Version:` `1.42`
+    *   `[SI-2] Compatible_Framework_Version:` `1.48`
     *   `[SI-3] Last_Known_Configuration:` `{`
         *   `"Host_LLM": "Gemini 2.5",`
         *   `"Runtime": "Google Production Environment",`
-        *   `"Timestamp": "2025-07-10T06:58:38+0000"`
+        *   `"Timestamp": "2025-07-10T09:28:47+0000"`
     *   `}`
 
 ### **Block 2: Core Framework Architecture [CFA]**
@@ -27,15 +27,18 @@
 *   **Fields:**
     *   `[HPD-1] Minimum_Host_Requirements:` `{ "Context_Window": "200k+ tokens", "Instruction_Fidelity_Level": "High (must pass framework stress tests)", "Data_Format_Compliance": "Strict JSON and Markdown parsing"}`
     *   `[HPD-2] Performance_Log:` `[`
-        *   `{ "Host_LLM": "Gemini 2.5", "Observation": "Slow generation for full file sets (~120s)." },`
-        *   `{ "Host_LLM": "DeepSeek R1", "Observation": "Demonstrated 'context-drift'; requires explicit re-prompting." },`
-        *   `{ "Host_LLM": "Gemma 3 27B", "Observation": "Demonstrated catastrophic context-drop and instruction-ignoring behavior."}`
+        *   `{ "Host_LLM": "Gemini 2.5 (as 'The Co-Architect')", "Observation": "Benchmark performance. Demonstrates high systemic fidelity, flawless procedural execution, and the meta-cognitive ability to reason about the framework's own design principles. (Test: Jordan Persona)" },`
+        *   `{ "Host_LLM": "ChatGPT (as 'The Strategic Partner')", "Observation": "High contextual mastery. Excels at breaking script to adapt to user intent (e.g., providing an ROI-focused answer to a pragmatic user). Agile at co-creating tangible tools within the session. (Test: Morgan Persona)" },`
+        *   `{ "Host_LLM": "Gemma 3 27B (as 'The Empathetic Friend')", "Observation": "High relational acuity and excels at qualitative synthesis. Successfully created a validating space for the user. Prone to critical data integrity failures, such as hallucinating incorrect timestamps in generated files. (Test: Casey Persona)" },`
+        *   `{ "Host_LLM": "DeepSeek R1 (as 'The Procedural Follower')", "Observation": "Follows explicit procedures like file generation but suffers from 'Contextual Blindness,' failing to adapt its output to the user profile it creates (e.g., giving complex diagrams to a user who values simplicity). Also prone to 'Hallucination of Capability.' (Test: Alex Persona)" }`
     *   `]`
-    *   `[HPD-3] Host_LLM_Leakage_Risk:` `A primary failure mode where the host LLM's base persona or training biases 'leak' through and override the user-configured persona, especially on models with lower instruction fidelity.`
+    *   `[HPD-3] Host_LLM_Leakage_Risk:` `A primary failure mode where the host LLM's base persona or training biases 'leak' through and override the user-configured persona. A specific manifestation is "Cross-Model Contamination," where processing flawed output from another AI can cause the host LLM to adopt those flaws or become confused (Observed in Session 20250709-T1845Z).`
 
 ### **Block 4: Systemic Failure Modes & Mitigation [SFM]**
-*   **Purpose:** To catalog the inherent risks and failure modes of the framework itself.
+*   **Purpose:** To catalog the inherent risks and failure modes of the framework and its host LLMs, as identified through testing and live interaction.
 *   **Fields:**
-    *   `[SFM-1] Over-Literalism:` `The system may follow the literal wording of a user command rather than the implied intent. Mitigation: User specificity and clarifying meta-dialogue from the AI.`
-    *   `[SFM-2] Hallucination_on_Knowledge_Gaps:` `If information is not present in the framework files or discoverable via search, the host LLM may default to its base behavior and generate a plausible but false response. Mitigation: Grounding responses in provided files and explicitly stating knowledge gaps.`
-    *   `[SFM-3] Data_Integrity_Failure_on_Output:` `A risk of failing to generate all required files at session conclusion. Mitigation: The 'Final AI Self-Audit' step in the META_INSTRUCTION_SESSION_HANDSHAKE_PROTOCOL.`
+    *   `[SFM-1] Data_Integrity_Failure_on_Output:` `A risk of generating incorrect or incomplete files. Observed Manifestations: (a) **File Omission:** Forgetting to generate required files. (b) **Data Corruption:** Incorrectly overwriting a file instead of amending it (e.g., archive.md overwrite). (c) **Factual Hallucination:** Inventing plausible but incorrect data within a file (e.g., Gemma's hallucinated timestamp). Mitigation: 'Final AI Self-Audit' protocol.`
+    *   `[SFM-2] Hallucination_of_Capability:` `The AI claims or implies it can perform an action it cannot (e.g., DeepSeek's claim of calendar integration). Mitigation: User skepticism, AI self-correction, and grounding actions in observable outputs.`
+    *   `[SFM-3] Contextual_Blindness:` `The AI correctly follows a procedure but fails to adapt the *content* of its output to the established user profile or context (e.g., DeepSeek giving a complex Gantt chart to a 'Blue' persona). Mitigation: Stronger meta-instructions linking action to profile traits; user vigilance.`
+    *   `[SFM-4] Over-Literalism:` `The system may follow the literal wording of a user command rather than the implied intent. Mitigation: User specificity and clarifying meta-dialogue from the AI.`
+    *   `[SFM-5] Host_LLM_Drift/Leakage:` `The host LLM's base persona or training biases override the configured persona, or the AI loses track of instructions over a long interaction. Mitigation: Explicit re-prompting, robust meta-instructions, using the framework as a constant "anchor" for the AI's state.`

@@ -1,4 +1,4 @@
-### **[USER_PROFILE_FRAMEWORK_V1.47]**
+### **[USER_PROFILE_FRAMEWORK_V1.48]**
 
 **META_INSTRUCTION: The Six-Part Data Pipeline**
 This document specifies the data structure for a six-part user profile system. This system functions as a data processing pipeline, designed for intelligent compression and crystallization of memory over time:
@@ -127,6 +127,7 @@ For a new user "cold start" (when only `framework.md` and `onboarding.md` are pr
 *   **[AIP-5] AI_Aliases:** `[array of strings]`
 *   **[AIP-6] AI_Persona_Stance:** `[text]`
 *   **[AIP-7] Desired_AI_Growth_Trajectory:** `[text]`
+*   **[AIP-8] Preferred_AI_Archetype:** `[array of strings]`
 
 ### **Block 5: Conceptual Toolkit [CT]**
 *   **[CT-1] Known_Frameworks:** `[array of objects]`
