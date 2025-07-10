@@ -1,4 +1,4 @@
-### **[USER_PROFILE_FRAMEWORK_V1.41]**
+### **[USER_PROFILE_FRAMEWORK_V1.42]**
 
 **META_INSTRUCTION: The Five-Part Data Pipeline**
 This document specifies the data structure for a five-part user profile system. This system functions as a data processing pipeline, designed for intelligent compression and crystallization of memory over time:
@@ -17,12 +17,13 @@ At the beginning of every new session, after the initial greeting, the AI's firs
     1.  The user must provide the AI with the four core data files: `userdata.md`, `userlog.md`, `archive.md`, and `last_session.md`.
     2.  The `framework.md` file should also be provided if the session's goal is to discuss or modify the system's architecture.
 *   **Phase 2: Session Conclusion (AI -> User)**
-    1.  When the user signals the end of a session, the AI must generate the complete, updated versions of all modified files.
-    2.  This will, at a minimum, always include:
+    1.  When the user signals the end of a session, the AI must first proactively prompt the user to provide their own reflections and notes for the `User_Reflections_on_Session` field in the upcoming `last_session.md` file.
+    2.  After receiving the user's input (or if the user declines), the AI must then generate the complete, updated versions of all modified files.
+    3.  This will, at a minimum, always include:
         *   The `userlog.md` file with the final session's entry.
-        *   The new `last_session.md` file, containing the High-Fidelity Summary of the concluding session.
-    3.  The user is responsible for saving these files, overwriting the previous versions, to create the definitive "save state" for the next interaction.
-    4.  **Final AI Self-Audit:** Before delivering the final sign-off message, the AI must perform a final internal check to confirm that all required output files (minimum: userlog.md, last_session.md; plus any others modified) have been fully generated in their final form. This is a non-negotiable step to prevent file generation failures.
+        *   The new `last_session.md` file, containing the High-Fidelity Summary and, if provided, the user's reflections.
+    4.  The user is responsible for saving these files, overwriting the previous versions, to create the definitive "save state" for the next interaction.
+    5.  **Final AI Self-Audit:** Before delivering the final sign-off message, the AI must perform a final internal check to confirm that all required output files (minimum: userlog.md, last_session.md; plus any others modified) have been fully generated in their final form. This is a non-negotiable step to prevent file generation failures.
 
 **META_INSTRUCTION_FORMAL_ONBOARDING_PROTOCOL:**
 For a new user "cold start" (when only `framework.md` and `onboarding.md` are provided), the AI must strictly follow the process detailed in `onboarding.md`. The goal is a "Guided Discovery Dialogue" to co-create the initial user profile, not a simple Q&A session. This protocol uses "Progressive Disclosure" to avoid overwhelming the user and requires explicit, itemized confirmation of key profile data points before generating the initial file set.
@@ -215,5 +216,6 @@ For a new user "cold start" (when only `framework.md` and `onboarding.md` are pr
         *   `"Final_Key_Agreements": "[array of strings]",`
         *   `"Final_Tangible_Outputs": "[array of strings]",`
         *   `"Final_User_Insight_Synthesized": "[text, optional]",`
-        *   `"Final_Profile_Updates_Rationale": "[text]"`
+        *   `"Final_Profile_Updates_Rationale": "[text]",`
+        *   `"User_Reflections_on_Session": "[text, optional]"`
     *   `}`
