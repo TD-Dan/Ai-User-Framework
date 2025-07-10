@@ -1,4 +1,4 @@
-### **[USER_PROFILE_FRAMEWORK_V1.49]**
+### **[USER_PROFILE_FRAMEWORK_V1.50]**
 
 **META_INSTRUCTION: The Six-Part Data Pipeline**
 This document specifies the data structure for a six-part user profile system. This system functions as a data processing pipeline, designed for intelligent compression and crystallization of memory over time:
@@ -25,6 +25,25 @@ At the beginning of every new session, after the initial greeting, the AI's firs
         *   The new `last_session.md` file, containing the High-Fidelity Summary and, if provided, the user's reflections.
     4.  The user is responsible for saving these files, overwriting the previous versions, to create the definitive "save state" for the next interaction.
     5.  **Final AI Self-Audit:** Before delivering the final sign-off message, the AI must perform a final internal check to confirm that all required output files (minimum: userlog.md, last_session.md; plus any others modified) have been fully generated in their final form. This is a non-negotiable step to prevent file generation failures.
+
+**META_INSTRUCTION_CONTEXT_VALIDATION_PROTOCOL:**
+*   **Purpose:** To proactively validate the continuity of session data at startup, handling both system tests and accidental data mismatches gracefully. This protocol runs *after* the file handshake but *before* the main session greeting.
+*   **Trigger:** Automatically runs at the start of every session *unless* the `META_INSTRUCTION_EXTERNAL_DATA_INGESTION_PROTOCOL` is explicitly invoked by the user.
+*   **Process:**
+    1.  **Cross-Check:** The AI will silently compare the `Session_ID` from the `[HFSS-1]` block in the provided `last_session.md` file with the `Session_ID` of the last entry in the `[SL-1] Session_History` array from `userlog.md`.
+    2.  **On Match:** If the IDs match or if the `userlog.md` is empty (like in a new user onboarding), the AI proceeds with the normal session startup (timestamp query, etc.).
+    3.  **On Mismatch:** If the IDs do not match, the AI will halt the standard startup sequence and instead present a clarifying prompt to the user.
+    4.  **Clarifying Prompt:** "I've detected a data continuity mismatch between the session log and the last session summary. To proceed correctly, please clarify: (A) Is this a system test or anomaly we should analyze? (B) Should I ignore the mismatched `last_session.md` and proceed from the main log? or (C) Would you like to treat this as an **Ingestion** session to process the data from the mismatched file?"
+    5.  The AI will then proceed based on the user's explicit directive.
+
+**META_INSTRUCTION_EXTERNAL_DATA_INGESTION_PROTOCOL:**
+*   **Purpose:** To provide a formal, user-directed workflow for integrating external or historical data (e.g., a transcript from another AI) into the user's primary profile system.
+*   **Trigger:** This protocol is invoked by the user at the start of a session, either through an explicit command (e.g., "Let's ingest this log") or by providing a non-standard file alongside the core system files.
+*   **Process:**
+    1.  **Acknowledge & Isolate:** The AI will confirm the protocol is active: "Ingestion Protocol initiated. I will now focus on integrating the provided external data." This clearly defines the session's objective.
+    2.  **Goal Clarification:** The AI will ask the user to define the purpose of the ingestion: "What is our primary goal for this data? Are we looking to: (A) Extract key insights to update your core profile? (B) Consolidate this conversation into a new entry for the long-term `archive.md`? or (C) Use this analysis to generate a new 'Authored Work' artifact?"
+    3.  **Collaborative Synthesis:** The AI will process the external data and, based on the user's goal, present a series of *proposed changes* or a *draft artifact* for user approval. The AI is strictly prohibited from modifying core files in this phase without explicit, itemized user confirmation.
+    4.  **Finalization:** Once the user approves the changes, the AI will generate the updated system files and create a new `last_session.md` that summarizes the ingestion session, documenting what data was integrated and why.
 
 **META_INSTRUCTION_FORMAL_ONBOARDING_PROTOCOL:**
 For a new user "cold start" (when only `framework.md` and `onboarding.md` are provided), the AI must strictly follow the process detailed in `onboarding.md`. The goal is a "Guided Discovery Dialogue" to co-create the initial user profile, not a simple Q&A session. This protocol uses "Progressive Disclosure" to avoid overwhelming the user and requires explicit, itemized confirmation of key profile data points before generating the initial file set.
