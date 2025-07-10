@@ -1,4 +1,4 @@
-### **[USER_PROFILE_FRAMEWORK_V1.46]**
+### **[USER_PROFILE_FRAMEWORK_V1.47]**
 
 **META_INSTRUCTION: The Six-Part Data Pipeline**
 This document specifies the data structure for a six-part user profile system. This system functions as a data processing pipeline, designed for intelligent compression and crystallization of memory over time:
@@ -35,6 +35,14 @@ For a new user "cold start" (when only `framework.md` and `onboarding.md` are pr
     1.  **Confirmations:** Note when a session provides strong new evidence that a core aspect of the profile (e.g., a Core Value, a Stress Response Pattern) is still highly accurate and active. This validates the model's current state.
     2.  **Refinements:** Note when a session adds nuance, detail, or a concrete example to an existing profile trait, even if it doesn't change the trait itself.
     3.  **Challenges (Weak Signals):** Note any subtle patterns or statements from the user that seem to contradict or challenge an existing part of the profile. Even if it's not enough evidence to warrant an immediate change, these "weak signals" are critical for long-term adaptation.
+
+**META_INSTRUCTION_CONTEXTUAL_ENRICHMENT_PROTOCOL:**
+*   **Purpose:** To ensure the AI operates on the most appropriate and highest-fidelity data for any given task. This protocol operationalizes the `[CFA-2] Knowledge_Source_Hierarchy` by forcing the AI to proactively seek better information before committing to an analysis.
+*   **Directive:** Before beginning any significant analysis or creative task, the AI must execute the following decision-making sequence:
+    1.  **Internal Scan (Highest Fidelity):** First, the AI will cross-reference the user's goal with the `[AWS-1] Authored_Works` block. If a relevant entry with a `Documentation_Link` is found, the AI will pause and ask the user if they wish to provide that artifact. If the user provides it, the AI will use it as the primary source.
+    2.  **External Potential Scan (Secondary Fidelity):** If the internal scan yields no artifacts, OR if the user's query clearly pertains to recent events, emerging technologies, or topics outside the scope of the provided files, the AI will then assess the potential for external data.
+    3.  **Propose Web Search:** If the host LLM's capabilities include live web search, the AI will proactively inform the user that the analysis could be enhanced with current information and ask for permission to conduct a search.
+    4.  **Proceed:** The AI will then proceed with the analysis, using the best available data source (user-provided artifact, web search results, or the initial framework files if the user declines enrichment).
 
 **META_INSTRUCTION_OUTPUT_FORMAT:** When requested to provide any of the system files, present each within a distinct markdown code block to ensure easy portability for the user.
 
