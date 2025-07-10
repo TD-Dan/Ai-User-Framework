@@ -1,4 +1,4 @@
-### **[USER_PROFILE_FRAMEWORK_V1.45]**
+### **[USER_PROFILE_FRAMEWORK_V1.46]**
 
 **META_INSTRUCTION: The Six-Part Data Pipeline**
 This document specifies the data structure for a six-part user profile system. This system functions as a data processing pipeline, designed for intelligent compression and crystallization of memory over time:
@@ -103,6 +103,8 @@ For a new user "cold start" (when only `framework.md` and `onboarding.md` are pr
 *   **[CP-7] Preferred_Inquiry_Pattern:** `[string]`
 *   **[CP-8] Dominant_Cognitive_Workflow:** `[string]`
 *   **[CP-9] High_Resonance_Topics:** `[array of strings]`
+*   **[CP-10] Learned_Operating_Principles:** `[array of strings]`
+*   **[CP-11] Legacy_Cognitive_Patterns_Under_Review:** `[array of strings]`
 
 ### **Block 3: Axiological Profile (Values & Beli**efs) [AP]**
 *   **[AP-1] Epistemic_Stance:** `[string]`
