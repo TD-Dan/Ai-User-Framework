@@ -8,7 +8,7 @@
 *   **Purpose:** To define the framework's version and the specific host it is currently running on.
 *   **Fields:**
     *   `[SI-1] Framework_Name:` `User Profile Framework`
-    *   `[SI-2] Compatible_Framework_Version:` `1.48`
+    *   `[SI-2] Compatible_Framework_Version:` `1.49` ****USER-ADDED-COMMENT: lets remove this datapoint as it unnecessary requires recreation of the whole aicore when framework is updated. There is nothing fundamentally changing between the two files that should warrant this kind of tracking. The above SI-1 might also be redundant.****
     *   `[SI-3] Last_Known_Configuration:` `{`
         *   `"Host_LLM": "Gemini 2.5",`
         *   `"Runtime": "Google Production Environment",`

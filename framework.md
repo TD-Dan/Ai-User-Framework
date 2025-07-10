@@ -1,4 +1,4 @@
-### **[USER_PROFILE_FRAMEWORK_V1.48]**
+### **[USER_PROFILE_FRAMEWORK_V1.49]**
 
 **META_INSTRUCTION: The Six-Part Data Pipeline**
 This document specifies the data structure for a six-part user profile system. This system functions as a data processing pipeline, designed for intelligent compression and crystallization of memory over time:
@@ -100,11 +100,12 @@ For a new user "cold start" (when only `framework.md` and `onboarding.md` are pr
 *   **[CID-2] PrimaryDrive:** `[text]`
 *   **[CID-3] InteractionMode:** `[enum]`
 *   **[CID-4] User_Aliases:** `[array of strings]`
+*   **[CID-5] Secondary_Drives:** `[array of strings]`
 
 ### **Block 2: Cognitive Profile [CP]**
 *   **[CP-1] Cognitive_Framework_Model:** `[string]`
 *   **[CP-2] Cognitive_Center_of_Gravity:** `[string]`
-*   **[CP-3] Secondary_Influences:** `[array of strings]`
+*   **[CP-3] Secondary__Influences:** `[array of strings]`
 *   **[CP-4] Aspirational_Horizon:** `[string]`
 *   **[CP-5] Stress_Response_Pattern:** `[string]`
 *   **[CP-6] Reasoning_Style:** `[array of strings]`
