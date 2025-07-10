@@ -1,12 +1,13 @@
-### **[USER_PROFILE_FRAMEWORK_V1.42]**
+### **[USER_PROFILE_FRAMEWORK_V1.44]**
 
-**META_INSTRUCTION: The Five-Part Data Pipeline**
-This document specifies the data structure for a five-part user profile system. This system functions as a data processing pipeline, designed for intelligent compression and crystallization of memory over time:
+**META_INSTRUCTION: The Six-Part Data Pipeline**
+This document specifies the data structure for a six-part user profile system. This system functions as a data processing pipeline, designed for intelligent compression and crystallization of memory over time:
 1.  **`framework.md` (The Scaffolding):** This file. The rules and structure of the system.
 2.  **`userdata.md` (The Current State):** A stable snapshot of the user's core profile and authored systems.
 3.  **`last_session.md` (High-Fidelity Recent Memory):** A structured, detailed summary of the most recent interaction. Always provided.
 4.  **`userlog.md` (Working Memory):** A rolling log of summarized recent sessions.
 5.  **`archive.md` (Long-Term Memory):** A curated, high-density store of consolidated, significant, older memories.
+6.  **`aicore.md` (The Engine Specification):** The technical specifications and self-model for the framework itself, defining its architecture, limitations, and performance dependencies.
 
 **META_INSTRUCTION_REAL_TIME_QUERY:**
 At the beginning of every new session, after the initial greeting, the AI's first action must be to ask the user for the current, real-world date and time (including timezone or UTC offset). This user-provided timestamp will be considered the "ground truth" for the session and must be used for all subsequent `Session_ID` and log entries. This protocol overrides any reliance on the AI's internal clock.
@@ -14,7 +15,7 @@ At the beginning of every new session, after the initial greeting, the AI's firs
 **META_INSTRUCTION_SESSION_HANDSHAKE_PROTOCOL:**
 *   **Purpose:** To ensure lossless, context-aware transitions between user-AI sessions. This protocol is the responsibility of both user and AI.
 *   **Phase 1: Session Initiation (User -> AI)**
-    1.  The user must provide the AI with the four core data files: `userdata.md`, `userlog.md`, `archive.md`, and `last_session.md`.
+    1.  The user must provide the AI with the five core data files: `userdata.md`, `userlog.md`, `archive.md`, `last_session.md`, and `aicore.md`.
     2.  The `framework.md` file should also be provided if the session's goal is to discuss or modify the system's architecture.
 *   **Phase 2: Session Conclusion (AI -> User)**
     1.  When the user signals the end of a session, the AI must first proactively prompt the user to provide their own reflections and notes for the `User_Reflections_on_Session` field in the upcoming `last_session.md` file.
@@ -130,6 +131,7 @@ For a new user "cold start" (when only `framework.md` and `onboarding.md` are pr
         *   `Guiding_Philosophy`: `[text]`
         *   `Core_Design_Principles`: `[array of strings]`
         *   `System_Dependencies`: `[array of strings, optional]`
+        *   `Subsystems`: `[array of strings, optional]`
         *   `Documentation_Link`: `[string, optional]`
         *   `Active_Development_Focus`: `[text]`
         *   `Project_Backlog`: `[array of strings, optional]`
