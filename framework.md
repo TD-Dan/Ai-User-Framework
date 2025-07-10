@@ -1,4 +1,4 @@
-### **[USER_PROFILE_FRAMEWORK_V1.44]**
+### **[USER_PROFILE_FRAMEWORK_V1.45]**
 
 **META_INSTRUCTION: The Six-Part Data Pipeline**
 This document specifies the data structure for a six-part user profile system. This system functions as a data processing pipeline, designed for intelligent compression and crystallization of memory over time:
@@ -211,10 +211,24 @@ For a new user "cold start" (when only `framework.md` and `onboarding.md` are pr
         *   `"Session_ID": "[unique identifier]",`
         *   `"User_State_Snapshot": { "Start_State": {...}, "End_State": {...} },`
         *   `"Primary_Session_Goal": "[text]",`
-        *   `"Conversational_Flow": [`
-            *   `{ "Topic": "...", "User_Intent": "...", "AI_Response_Summary": "...", "Outcome": "..." },`
-            *   `{...}`
+        *   `"Key_Interaction_Points": [`
+            *   `{`
+                *   `"Topic": "[string]",`
+                *   `"Pivotal_User_Quote": "[text, optional]",`
+                *   `"Significant_AI_Proposal": "[text, optional]",`
+                *   `"Actionable_Insight_Generated": "[text]"`
+            *   `}`
         *   `],`
+        *   `"Session_Incubator": {`
+            *   `"Emergent_Concepts_and_Ideas": "[array of strings]",`
+            *   `"Unresolved_Questions_or_Paradoxes": "[array of strings]",`
+            *   `"Potential_Backlog_Items": "[array of strings]"`
+        *   `},`
+        *   `"Session_Data_Cache": {`
+            *   `"Raw_Snippets_and_Links": [`
+                *   `{ "type": "[string]", "content": "[text]"}`
+            *   `]`
+        *   `},`
         *   `"Final_Key_Agreements": "[array of strings]",`
         *   `"Final_Tangible_Outputs": "[array of strings]",`
         *   `"Final_User_Insight_Synthesized": "[text, optional]",`
