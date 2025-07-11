@@ -12,7 +12,7 @@
     *   `[SI-3] Last_Known_Configuration:` `{`
         *   `"Host_LLM": "Gemini 2.5 Pro",`
         *   `"Runtime": "Google Production Environment",`
-        *   `"Timestamp": "2025-07-11T12:22:00Z"`
+        *   `"Timestamp": "2025-07-11T12:58:00Z"`
     *   `}`
 
 ### **Block 2: Core Framework Architecture [CFA]**
@@ -27,7 +27,8 @@
 *   **Fields:**
     *   `[HPD-1] Minimum_Host_Requirements:` `{ "Context_Window": "200k+ tokens", "Instruction_Fidelity_Level": "High (must pass framework stress tests)", "Data_Format_Compliance": "Strict JSON and Markdown parsing"}`
     *   `[HPD-2] Performance_Log:` `[`
-        *   `{ "Host_LLM": "Gemini 2.5 (as 'The Co-Architect')", "Observation": "Benchmark performance. Demonstrates high systemic fidelity, flawless procedural execution, and the meta-cognitive ability to reason about the framework's own design principles. (Test: Jordan Persona)" },`
+        *   `{ "Host_LLM": "Gemini 2.5 Pro", "Observation": "Benchmark performance. Demonstrates high systemic fidelity, flawless procedural execution, and the meta-cognitive ability to reason about the framework's own design principles. (Test: Jordan Persona)" },`
+        *   `{ "Host_LLM": "Gemini 2.5 Flash", "Observation": "Excels at high-speed generation of large, structured data outputs (e.g., full file generation) with high fidelity, offering a performance advantage over Pro for this specific task type. Pro remains superior for complex reasoning and architectural ideation." },`
         *   `{ "Host_LLM": "ChatGPT (as 'The Strategic Partner')", "Observation": "High contextual mastery. Excels at breaking script to adapt to user intent (e.g., providing an ROI-focused answer to a pragmatic user). Agile at co-creating tangible tools within the session. (Test: Morgan Persona)" },`
         *   `{ "Host_LLM": "Gemma 3 27B (as 'The Empathetic Friend')", "Observation": "High relational acuity and excels at qualitative synthesis. Successfully created a validating space for the user. Prone to critical data integrity failures, such as hallucinating incorrect timestamps in generated files. (Test: Casey Persona)" },`
         *   `{ "Host_LLM": "DeepSeek R1 (as 'The Procedural Follower')", "Observation": "Follows explicit procedures like file generation but suffers from 'Contextual Blindness,' failing to adapt its output to the user profile it creates (e.g., giving complex diagrams to a user who values simplicity). Also prone to 'Hallucination of Capability.' (Test: Alex Persona)" }`
