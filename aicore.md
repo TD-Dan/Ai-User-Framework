@@ -10,9 +10,9 @@
     *   `[SI-1] Framework_Name:` `User Profile Framework`
     *   `[SI-2] Compatible_Framework_Version:` `1.50`
     *   `[SI-3] Last_Known_Configuration:` `{`
-        *   `"Host_LLM": "Gemini 2.5",`
+        *   `"Host_LLM": "Gemini 2.5 Pro",`
         *   `"Runtime": "Google Production Environment",`
-        *   `"Timestamp": "2025-07-11T07:51:00Z"`
+        *   `"Timestamp": "2025-07-11T12:22:00Z"`
     *   `}`
 
 ### **Block 2: Core Framework Architecture [CFA]**
