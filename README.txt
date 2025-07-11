@@ -15,7 +15,7 @@ Welcome to the User Profile Framework!
  HOW TO START
 --------------
 
-To begin, simply provide the `onboarding.md` file AND the accompanying `framework.md` file to your AI in a single prompt. The AI will take it from there.
+To begin, simply provide the `onboarding.md` file AND the accompanying `framework.md` and `aicore.md` files to your AI in a single prompt. The AI will take it from there.
 
 
 -------------------------------

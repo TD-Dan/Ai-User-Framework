@@ -8,10 +8,11 @@
 *   **Purpose:** To define the framework's version and the specific host it is currently running on.
 *   **Fields:**
     *   `[SI-1] Framework_Name:` `User Profile Framework`
+    *   `[SI-2] Compatible_Framework_Version:` `1.50`
     *   `[SI-3] Last_Known_Configuration:` `{`
         *   `"Host_LLM": "Gemini 2.5",`
         *   `"Runtime": "Google Production Environment",`
-        *   `"Timestamp": "2025-07-10T12:21:29+00:00"`
+        *   `"Timestamp": "2025-07-11T07:51:00Z"`
     *   `}`
 
 ### **Block 2: Core Framework Architecture [CFA]**
