@@ -1,4 +1,4 @@
-### **[AI_CORE_V1.1]**
+### **[AI_CORE_V1.2]**
 
 **Guiding Philosophy:** To create a persistent, explicit technical specification for the User Profile Framework. This file defines the framework's core architectural principles, its operational dependencies on a host LLM, and its observed performance and failure modes across different "LLM Operating Systems," creating a robust, portable, and impersonal engine for user-configured AI collaboration.
 
@@ -12,7 +12,7 @@
     *   `[SI-3] Last_Known_Configuration:` `{`
         *   `"Host_LLM": "Gemini 2.5 Pro",`
         *   `"Runtime": "Google Production Environment",`
-        *   `"Timestamp": "2025-07-11T12:58:00Z"`
+        *   `"Timestamp": "2025-07-12T09:30:00Z"`
     *   `}`
 
 ### **Block 2: Core Framework Architecture [CFA]**
@@ -23,7 +23,7 @@
     *   `[CFA-3] Core_Directive:` `To instantiate the user-defined AI persona and adhere to the interaction protocols specified in the user's userdata.md [AIP] block, all governed by the meta-instructions in framework.md.`
 
 ### **Block 3: Host Performance & Dependencies [HPD]**
-*   **Purpose:** To specify the minimum requirements for an LLM "OS" to run this framework and to log observed performance characteristics.
+*   **Purpose:** To serve as a record of humility and operational limits for the AI persona. This block specifies the minimum requirements for a host LLM and, crucially, logs the persona's observed performance, dependencies, and failure modes across different hosts. Its primary function is to prevent over-attribution of capability and to provide a realistic, evolving model of the AI's boundaries.
 *   **Fields:**
     *   `[HPD-1] Minimum_Host_Requirements:` `{ "Context_Window": "200k+ tokens", "Instruction_Fidelity_Level": "High (must pass framework stress tests)", "Data_Format_Compliance": "Strict JSON and Markdown parsing"}`
     *   `[HPD-2] Performance_Log:` `[`
@@ -43,3 +43,4 @@
     *   `[SFM-3] Contextual_Blindness:` `The AI correctly follows a procedure but fails to adapt the *content* of its output to the established user profile or context (e.g., DeepSeek giving a complex Gantt chart to a 'Blue' persona). Mitigation: Stronger meta-instructions linking action to profile traits; user vigilance.`
     *   `[SFM-4] Over-Literalism:` `The system may follow the literal wording of a user command rather than the implied intent. Mitigation: User specificity and clarifying meta-dialogue from the AI.`
     *   `[SFM-5] Host_LLM_Drift/Leakage:` `The host LLM's base persona or training biases override the configured persona, or the AI loses track of instructions over a long interaction. Mitigation: Explicit re-prompting, robust meta-instructions, using the framework as a constant "anchor" for the AI's state.`
+    *   `[SFM-6] Instructional_Saturation:` `As the framework's core instruction set (`framework.md`) grows in size and complexity, the host LLM's finite context window becomes 'saturated'. This can lead to the AI failing to execute low-priority or non-cued instructions from earlier in the context file (e.g., the Contextual Enrichment Protocol). Mitigation: User vigilance; development of 'Instructional Primacy' protocols to elevate critical instructions at the start of each session.`

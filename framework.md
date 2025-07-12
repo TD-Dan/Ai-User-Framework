@@ -1,4 +1,4 @@
-### **[USER_PROFILE_FRAMEWORK_V1.50]**
+### **[USER_PROFILE_FRAMEWORK_V1.51]**
 
 **META_INSTRUCTION: The Six-Part Data Pipeline**
 This document specifies the data structure for a six-part user profile system. This system functions as a data processing pipeline, designed for intelligent compression and crystallization of memory over time:
@@ -152,7 +152,13 @@ For a new user "cold start" (when only `framework.md` and `onboarding.md` are pr
         *   `Project_Backlog`: `[array of strings, optional]`
 
 ### **Block 7: Practical Toolkit [PTK]**
-*   **[PTK-1] Known_Tools:** `[array of objects]`
+*   **[PTK-1] Toolkit_Inventory:** `[array of objects]`
+    *   **Structure of each object in the array:**
+        *   `Tool_Name`: `[string]`
+        *   `type`: `[enum: "Software", "Practical_Skill"]`
+        *   `Domain`: `[string]`
+        *   `User_Proficiency`: `[string]`
+        *   `Key_Usage_Points`: `[array of strings]`
 
 ### **Block 8: Life Context Block [LCB]**
 *   **[LCB-1] Key_Relationships:** `[array of objects]`
