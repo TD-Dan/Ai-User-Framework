@@ -10,7 +10,7 @@ Large Language Models are powerful, but they have no memory. Every interaction s
 
 ### The Solution: A System for Living Memory
 
-The User Profile Framework (AUF) is an open-source, plain-text system designed to solve this problem. It provides a structured, humane, and robust scaffolding that allows a user and an AI to co-create and maintain a persistent, evolving knowledge base.
+The Ai User Framework (AUF) is an open-source, plain-text system designed to solve this problem. It provides a structured, humane, and robust scaffolding that allows a user and an AI to co-create and maintain a persistent, evolving knowledge base.
 
 It is not just a chat history. It is a **living memory**, organized into a series of interconnected documents that capture your goals, your cognitive models, your authored works, and a shared set of interaction protocols.
 
