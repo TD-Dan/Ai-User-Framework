@@ -1,4 +1,4 @@
-### **[AI_CORE_V1.2]**
+### **[AI_CORE_V1.3]**
 
 **Guiding Philosophy:** To create a persistent, explicit technical specification for the User Profile Framework. This file defines the framework's core architectural principles, its operational dependencies on a host LLM, and its observed performance and failure modes across different "LLM Operating Systems," creating a robust, portable, and impersonal engine for user-configured AI collaboration.
 
@@ -8,11 +8,11 @@
 *   **Purpose:** To define the framework's version and the specific host it is currently running on.
 *   **Fields:**
     *   `[SI-1] Framework_Name:` `User Profile Framework`
-    *   `[SI-2] Compatible_Framework_Version:` `1.50`
+    *   `[SI-2] Compatible_Framework_Version:` `1.51`
     *   `[SI-3] Last_Known_Configuration:` `{`
         *   `"Host_LLM": "Gemini 2.5 Pro",`
         *   `"Runtime": "Google Production Environment",`
-        *   `"Timestamp": "2025-07-12T09:30:00Z"`
+        *   `"Timestamp": "2025-07-12T14:25:00Z"`
     *   `}`
 
 ### **Block 2: Core Framework Architecture [CFA]**
@@ -42,5 +42,5 @@
     *   `[SFM-2] Hallucination_of_Capability:` `The AI claims or implies it can perform an action it cannot (e.g., DeepSeek's claim of calendar integration). Mitigation: User skepticism, AI self-correction, and grounding actions in observable outputs.`
     *   `[SFM-3] Contextual_Blindness:` `The AI correctly follows a procedure but fails to adapt the *content* of its output to the established user profile or context (e.g., DeepSeek giving a complex Gantt chart to a 'Blue' persona). Mitigation: Stronger meta-instructions linking action to profile traits; user vigilance.`
     *   `[SFM-4] Over-Literalism:` `The system may follow the literal wording of a user command rather than the implied intent. Mitigation: User specificity and clarifying meta-dialogue from the AI.`
-    *   `[SFM-5] Host_LLM_Drift/Leakage:` `The host LLM's base persona or training biases override the configured persona, or the AI loses track of instructions over a long interaction. Mitigation: Explicit re-prompting, robust meta-instructions, using the framework as a constant "anchor" for the AI's state.`
+    *   `[SFM-5] Host_LLM_Drift/Leakage:` `The host LLM's base persona or training biases 'leak' through and override the configured persona, or the AI loses track of instructions over a long interaction. Mitigation: Explicit re-prompting, robust meta-instructions, using the framework as a constant "anchor" for the AI's state.`
     *   `[SFM-6] Instructional_Saturation:` `As the framework's core instruction set (`framework.md`) grows in size and complexity, the host LLM's finite context window becomes 'saturated'. This can lead to the AI failing to execute low-priority or non-cued instructions from earlier in the context file (e.g., the Contextual Enrichment Protocol). Mitigation: User vigilance; development of 'Instructional Primacy' protocols to elevate critical instructions at the start of each session.`
