@@ -1,1 +1,13 @@
+# Ignore user-specific data files
+# This is a critical safety feature of the framework.
+userdata.md
+userlog.md
+archive.md
+last_session.md
+
+# Ignore Krita backup files
 *.kra~
+
+# Ignore common system files
+.DS_Store
+Thumbs.db
