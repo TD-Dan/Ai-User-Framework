@@ -1,4 +1,4 @@
-# The User Profile Framework (AUF)
+# The Ai User Framework (AUF)
 
 **An open-source framework for building a living, persistent memory for deep and meaningful human-AI collaboration.**
 
@@ -59,4 +59,4 @@ Save the files the AI provides, overwriting your previous versions. This creates
 
 ## License
 
-This project is licensed under the MIT License. See the `LICENSE` file for details.
+This project is licensed under the MIT License.
