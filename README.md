@@ -1,4 +1,4 @@
-# The Ai User Framework (AUF)
+# Ai User Framework (AUF)
 
 **An open-source framework for building a living, persistent memory for deep and meaningful human-AI collaboration.**
 
