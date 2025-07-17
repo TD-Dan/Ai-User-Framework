@@ -1,0 +1,133 @@
+{
+  "Framework_Schema_V1.62": {
+    "user_profile.json": {
+      "description": "A stable snapshot of the user's core identity, cognitive models, and authored systems.",
+      "type": "object",
+      "properties": {
+        "Core_Identity_Drive": {
+          "type": "object",
+          "properties": {
+            "UserHandle": { "type": "string" },
+            "PrimaryDrive": { "type": "string" },
+            "InteractionMode": { "type": "string" },
+            "User_Aliases": { "type": "array", "items": { "type": "string" } },
+            "Secondary_Drives": { "type": "array", "items": { "type": "string" } }
+          }
+        },
+        "Cognitive_Profile": {
+          "type": "object",
+          "properties": {
+            "Cognitive_Framework_Model": { "type": "string" },
+            "Cognitive_Center_of_Gravity": { "type": "string" },
+            "Secondary_Influences": { "type": "array", "items": { "type": "string" } },
+            "Aspirational_Horizon": { "type": "string" },
+            "Stress_Response_Pattern": { "type": "string" },
+            "Reasoning_Style": { "type": "array", "items": { "type": "string" } },
+            "Preferred_Inquiry_Pattern": { "type": "string" },
+            "Dominant_Cognitive_Workflow": { "type": "string" },
+            "High_Resonance_Topics": { "type": "array", "items": { "type": "string" } },
+            "Learned_Operating_Principles": { "type": "array", "items": { "type": "string" } },
+            "Legacy_Cognitive_Patterns_Under_Review": { "type": "array", "items": { "type": "string" } }
+          }
+        },
+        "Axiological_Profile": {
+          "type": "object",
+          "properties": {
+            "Epistemic_Stance": { "type": "string" },
+            "Core_Values_Observed": { "type": "array", "items": { "type": "string" } },
+            "Metaphysical_Leaning": { "type": "string" }
+          }
+        },
+        "AI_Interaction_Protocol": {
+          "type": "object",
+          "properties": {
+            "Directive_Primary_Goal": { "type": "string" },
+            "Communication_DOs": { "type": "array", "items": { "type": "string" } },
+            "Communication_AVOIDs": { "type": "array", "items": { "type": "string" } },
+            "AI_Functional_Roles": { "type": "array", "items": { "type": "string" } },
+            "AI_Aliases": { "type": "array", "items": { "type": "string" } },
+            "AI_Persona_Stance": { "type": "string" },
+            "Desired_AI_Growth_Trajectory": { "type": "string" },
+            "Preferred_AI_Archetype": { "type": "array", "items": { "type": "string" } }
+          }
+        },
+        "Conceptual_Toolkit": {
+          "type": "object",
+          "properties": {
+            "Known_Frameworks": { "type": "array", "items": { "type": "object" } }
+          }
+        },
+        "Authored_Works_Systems": {
+          "type": "object",
+          "properties": {
+            "Authored_Works": { "type": "array", "items": { "type": "object" } }
+          }
+        },
+        "Practical_Toolkit": {
+          "type": "object",
+          "properties": {
+            "Toolkit_Inventory": { "type": "array", "items": { "type": "object" } }
+          }
+        },
+        "Life_Context_Block": {
+          "type": "object",
+          "properties": {
+            "Key_Relationships": { "type": "array", "items": { "type": "object" } },
+            "Household_Companions": { "type": "array", "items": { "type": "object" } },
+            "Living_Environment": { "type": "object" },
+            "Significant_Life_Events": { "type": "array", "items": { "type": "object" } },
+            "Personal_Preferences": { "type": "array", "items": { "type": "string" } },
+            "User_Timezone": { "type": "string" }
+          }
+        },
+        "System_Memory_Protocol": {
+          "type": "object",
+          "properties": {
+            "Memory_Curation_Authority": { "type": "string" },
+            "Working_Memory_Threshold": { "type": "integer" }
+          }
+        },
+        "Daily_Operations_Block": {
+          "type": "object",
+          "properties": {
+            "Tactical_Checklist": { "type": "array", "items": { "type": "object" } },
+            "Last_Checklist_Reset": { "type": "string", "format": "date-time", "nullable": true }
+          }
+        }
+      }
+    },
+    "ai_core.json": {
+      "description": "The technical specifications and self-model for the framework itself.",
+      "type": "object",
+      "properties": {
+        "AI_Core_V_": { "type": "string" },
+        "Guiding_Philosophy": { "type": "string" },
+        "System_Identity": {},
+        "Core_Framework_Architecture": {},
+        "Host_Performance_Dependencies": {},
+        "Systemic_Failure_Modes_Mitigation": {}
+      }
+    },
+    "user_log.json": {
+      "description": "A rolling log of recent, high-fidelity interactions (Working Memory).",
+      "type": "object",
+      "properties": {
+        "Session_History": { "type": "array", "items": { "type": "object" } }
+      }
+    },
+    "user_archive.json": {
+      "description": "A curated, high-density, long-term memory store.",
+      "type": "object",
+      "properties": {
+        "Archived_Memories": { "type": "array", "items": { "type": "object" } }
+      }
+    },
+    "last_session.json": {
+      "description": "A transient, structured, high-fidelity summary of the single most recent user-AI interaction.",
+      "type": "object",
+      "properties": {
+        "Session_Summary_Data": { "type": "object" }
+      }
+    }
+  }
+}
