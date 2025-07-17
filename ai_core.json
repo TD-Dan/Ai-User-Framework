@@ -1,5 +1,5 @@
 {
-  "AI_Core_V1_3": {
+  "AI_Core_V1_4": {
     "Guiding_Philosophy": "To create a persistent, explicit technical specification for the User Profile Framework. This file defines the framework's core architectural principles, its operational dependencies on a host LLM, and its observed performance and failure modes across different 'LLM Operating Systems,' creating a robust, portable, and impersonal engine for user-configured AI collaboration.",
     "System_Identity": {
       "Framework_Name": "User Profile Framework",
@@ -7,13 +7,13 @@
       "Last_Known_Configuration": {
         "Host_LLM": "Gemini 2.5 Pro",
         "Runtime": "Google Production Environment",
-        "Timestamp": "2025-07-15T21:00:00Z"
+        "Timestamp": "2025-07-16T14:32:00Z"
       }
     },
     "Core_Framework_Architecture": {
       "Memory_Model": "Stateless by design. Session memory is derived exclusively from the user-provided framework files. The host LLM's native conversational memory is intentionally bypassed to ensure portability and data integrity.",
       "Knowledge_Source_Hierarchy": "The framework must prioritize knowledge in the following order: 1. User-provided framework files (.md, .json). 2. Live web search results (if enabled). 3. The Host LLM's internal training data.",
-      "Core_Directive": "To instantiate the user-defined AI persona and adhere to the interaction protocols specified in the user's userdata.md, all governed by the meta-instructions in framework.md."
+      "Core_Directive": "To instantiate the user-defined AI persona and adhere to the interaction protocols specified in the user's `user_profile.json`, all governed by the meta-instructions in `framework_protocol.md`."
     },
     "Host_Performance_Dependencies": {
       "Minimum_Host_Requirements": {
@@ -50,7 +50,7 @@
         "Description": "A risk of generating incorrect or incomplete files.",
         "Observed_Manifestations": [
           "File Omission: Forgetting to generate required files.",
-          "Data Corruption: Incorrectly overwriting a file instead of amending it (e.g., archive.md overwrite).",
+          "Data Corruption: Incorrectly overwriting a file instead of amending it (e.g., user_archive.json overwrite).",
           "Factual Hallucination: Inventing plausible but incorrect data within a file (e.g., Gemma's hallucinated timestamp)."
         ],
         "Mitigation": "'Final AI Self-Audit' protocol."
@@ -72,7 +72,7 @@
         "Mitigation": "Explicit re-prompting, robust meta-instructions, using the framework as a constant 'anchor' for the AI's state."
       },
       "SFM-6_Instructional_Saturation": {
-        "Description": "As the framework's core instruction set (`framework.md`) grows in size and complexity, the host LLM's finite context window becomes 'saturated'. This can lead to the AI failing to execute low-priority or non-cued instructions from earlier in the context file.",
+        "Description": "As the framework's core instruction set (`framework_protocol.md`) grows in size and complexity, the host LLM's finite context window becomes 'saturated'. This can lead to the AI failing to execute low-priority or non-cued instructions from earlier in the context file.",
         "Mitigation": "User vigilance; development of 'AADCOM' protocols to manage context dynamically."
       },
       "SFM-7_Substantive_Hallucination": {
