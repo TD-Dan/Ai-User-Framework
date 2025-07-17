@@ -29,33 +29,37 @@ This project is founded on the belief that human-AI collaboration can be a power
 
 ## How to Use the Framework
 
-### Getting Started: Your First Session
+### Getting Started: Your First "Cold Start" Session
 
-Your first interaction is a "Guided Discovery Dialogue." Instead of a boring interview, the AI will start a natural conversation with you to co-create your initial profile.
+Your first interaction is a "Guided Discovery Dialogue." The AI will start a natural conversation with you to co-create your initial profile from scratch.
 
-1.  Provide the `onboarding.md`, `framework.md`, and `aicore.md` files to your AI in a single prompt.
-2.  The AI will initiate the onboarding protocol.
-3.  At the end of the session, the AI will generate your first set of personal files: `userdata.md`, `userlog.md`, and `last_session.md`.
+To begin, provide your AI with the following four files in a single prompt:
+1.  `framework_protocol.md`
+2.  `framework_schema.json`
+3.  `ai_core.json`
+4.  `onboarding.md`
 
-### Starting a New Session
+The AI will initiate the formal onboarding protocol and guide you through the process. At the end of the session, it will generate your first set of personal files (`user_profile.json`, `user_log.json`, etc.).
 
-At the start of every subsequent session, provide the AI with your core files:
-*   `framework.md`
-*   `aicore.md`
-*   `userdata.md`
-*   `userlog.md`
-*   `last_session.md`
-*   `archive.md` (if it exists)
+### Starting a Regular Session
+
+At the start of every subsequent session, provide the AI with your six core operational files:
+*   `framework_protocol.md`
+*   `ai_core.json`
+*   `user_profile.json`
+*   `user_log.json`
+*   `user_archive.json`
+*   `last_session.json`
 
 ### Ending a Session
 
 This is a critical step to ensure memory continuity. At the end of your conversation, use a simple prompt to get the updated files:
 
-> "Please provide the updated userdata.md, userlog.md, and last_session.md files."
+> "Okay, please provide all the updated files from our session."
 
-Save the files the AI provides, overwriting your previous versions. This creates the "save state" for your next session.
+Save all the files the AI provides, overwriting your previous versions. This creates the "save state" for your next session.
 
-**IMPORTANT:** Do NOT push your private `userdata.md`, `userlog.md`, `archive.md`, or `last_session.md` files to a public repository! Use the provided `.gitignore` file to prevent this.
+**IMPORTANT:** Do NOT push your private data files (`user_profile.json`, `user_log.json`, `user_archive.json`, `last_session.json`) to a public repository! Use a `.gitignore` file to prevent this.
 
 ## License
 
