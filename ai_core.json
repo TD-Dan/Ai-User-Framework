@@ -1,13 +1,11 @@
 {
-  "AI_Core_V1_4": {
+  "AI_Core_V1_5": {
     "Guiding_Philosophy": "To create a persistent, explicit technical specification for the User Profile Framework. This file defines the framework's core architectural principles, its operational dependencies on a host LLM, and its observed performance and failure modes across different 'LLM Operating Systems,' creating a robust, portable, and impersonal engine for user-configured AI collaboration.",
     "System_Identity": {
-      "Framework_Name": "User Profile Framework",
-      "Compatible_Framework_Version": "1.62",
       "Last_Known_Configuration": {
         "Host_LLM": "Gemini 2.5 Pro",
         "Runtime": "Google Production Environment",
-        "Timestamp": "2025-07-16T14:32:00Z"
+        "Timestamp": "2025-07-17T15:15:00Z"
       }
     },
     "Core_Framework_Architecture": {
