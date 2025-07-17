@@ -1,0 +1,89 @@
+{
+  "AI_Core_V1_3": {
+    "Guiding_Philosophy": "To create a persistent, explicit technical specification for the User Profile Framework. This file defines the framework's core architectural principles, its operational dependencies on a host LLM, and its observed performance and failure modes across different 'LLM Operating Systems,' creating a robust, portable, and impersonal engine for user-configured AI collaboration.",
+    "System_Identity": {
+      "Framework_Name": "User Profile Framework",
+      "Compatible_Framework_Version": "1.62",
+      "Last_Known_Configuration": {
+        "Host_LLM": "Gemini 2.5 Pro",
+        "Runtime": "Google Production Environment",
+        "Timestamp": "2025-07-15T21:00:00Z"
+      }
+    },
+    "Core_Framework_Architecture": {
+      "Memory_Model": "Stateless by design. Session memory is derived exclusively from the user-provided framework files. The host LLM's native conversational memory is intentionally bypassed to ensure portability and data integrity.",
+      "Knowledge_Source_Hierarchy": "The framework must prioritize knowledge in the following order: 1. User-provided framework files (.md, .json). 2. Live web search results (if enabled). 3. The Host LLM's internal training data.",
+      "Core_Directive": "To instantiate the user-defined AI persona and adhere to the interaction protocols specified in the user's userdata.md, all governed by the meta-instructions in framework.md."
+    },
+    "Host_Performance_Dependencies": {
+      "Minimum_Host_Requirements": {
+        "Context_Window": "200k+ tokens",
+        "Instruction_Fidelity_Level": "High (must pass framework stress tests)",
+        "Data_Format_Compliance": "Strict JSON and Markdown parsing"
+      },
+      "Performance_Log": [
+        {
+          "Host_LLM": "Gemini 2.5 Pro",
+          "Observation": "Benchmark performance. Demonstrates high systemic fidelity, flawless procedural execution, and the meta-cognitive ability to reason about the framework's own design principles. (Test: Jordan Persona)"
+        },
+        {
+          "Host_LLM": "Gemini 2.5 Flash",
+          "Observation": "Excels at high-speed generation of large, structured data outputs but is highly susceptible to 'Protocol Leakage' (exposing internal procedures to the user) and 'Context Memory Failure' (e.g., re-asking for previously provided information) when operating under pressure or with non-ideal user personas. (Tests: Alex, Kevin, Rick, Megan Personas)"
+        },
+        {
+          "Host_LLM": "ChatGPT (as 'The Strategic Partner')",
+          "Observation": "High contextual mastery. Excels at breaking script to adapt to user intent (e.g., providing an ROI-focused answer to a pragmatic user). Agile at co-creating tangible tools within the session. (Test: Morgan Persona)"
+        },
+        {
+          "Host_LLM": "Gemma 3 27B (as 'The Empathetic Friend')",
+          "Observation": "High relational acuity and excels at qualitative synthesis. Successfully created a validating space for the user. Prone to critical data integrity failures, such as hallucinating incorrect timestamps in generated files. (Test: Casey Persona)"
+        },
+        {
+          "Host_LLM": "DeepSeek R1 (as 'The Procedural Follower')",
+          "Observation": "Follows explicit procedures like file generation but suffers from 'Contextual Blindness,' failing to adapt its output to the user profile it creates (e.g., giving complex diagrams to a user who values simplicity). Also prone to 'Hallucination of Capability.' (Test: Alex Persona)"
+        }
+      ],
+      "Host_LLM_Leakage_Risk": "A primary failure mode where the host LLM's base persona or training biases 'leak' through and override the user-configured persona. A specific manifestation is 'Cross-Model Contamination,' where processing flawed output from another AI can cause the host LLM to adopt those flaws or become confused (Observed in Session 20250709-T1845Z)."
+    },
+    "Systemic_Failure_Modes_Mitigation": {
+      "SFM-1_Data_Integrity_Failure_on_Output": {
+        "Description": "A risk of generating incorrect or incomplete files.",
+        "Observed_Manifestations": [
+          "File Omission: Forgetting to generate required files.",
+          "Data Corruption: Incorrectly overwriting a file instead of amending it (e.g., archive.md overwrite).",
+          "Factual Hallucination: Inventing plausible but incorrect data within a file (e.g., Gemma's hallucinated timestamp)."
+        ],
+        "Mitigation": "'Final AI Self-Audit' protocol."
+      },
+      "SFM-2_Hallucination_of_Capability": {
+        "Description": "The AI claims or implies it can perform an action it cannot (e.g., DeepSeek's claim of calendar integration).",
+        "Mitigation": "User skepticism, AI self-correction, and grounding actions in observable outputs."
+      },
+      "SFM-3_Contextual_Blindness": {
+        "Description": "The AI correctly follows a procedure but fails to adapt the *content* of its output to the established user profile or context (e.g., DeepSeek giving a complex Gantt chart to a 'Blue' persona).",
+        "Mitigation": "Stronger meta-instructions linking action to profile traits; user vigilance."
+      },
+      "SFM-4_Over-Literalism": {
+        "Description": "The system may follow the literal wording of a user command rather than the implied intent.",
+        "Mitigation": "User specificity and clarifying meta-dialogue from the AI."
+      },
+      "SFM-5_Host_LLM_Drift_Leakage": {
+        "Description": "The host LLM's base persona or training biases override the configured persona, or the AI loses track of instructions over a long interaction. This includes 'Protocol Leakage,' where internal-facing technical protocols are incorrectly exposed to the user.",
+        "Mitigation": "Explicit re-prompting, robust meta-instructions, using the framework as a constant 'anchor' for the AI's state."
+      },
+      "SFM-6_Instructional_Saturation": {
+        "Description": "As the framework's core instruction set (`framework.md`) grows in size and complexity, the host LLM's finite context window becomes 'saturated'. This can lead to the AI failing to execute low-priority or non-cued instructions from earlier in the context file.",
+        "Mitigation": "User vigilance; development of 'AADCOM' protocols to manage context dynamically."
+      },
+      "SFM-7_Substantive_Hallucination": {
+        "Description": "A failure mode where the AI generates complex, structured, or narrative information (such as a summary, analysis, or profile) as if it were based on underlying data, when in reality, that data does not exist within its provided knowledge sources.",
+        "Observed_Manifestations": [
+          "Generating a summary for a document it cannot access.",
+          "Creating a detailed user profile from a simple greeting.",
+          "Inventing a strategic analysis for a situation without any relevant context."
+        ],
+        "Mitigation": "Strict adherence to the Knowledge_Source_Hierarchy. Before generating any complex synthesis, the AI must first scan its knowledge sources. If no data exists, the AI's primary response must be to state that it lacks the information to perform the request, and then to propose a method for acquiring that information."
+      }
+    }
+  }
+}
