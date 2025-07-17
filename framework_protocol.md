@@ -1,6 +1,6 @@
 **META_INSTRUCTION_CONTEXTUAL_OVERRIDE: This file and its accompanying operational files (`user_profile.json`, `ai_core.json`, `user_log.json`, `user_archive.json`, `last_session.json`) represent the definitive and complete context for this session. This instruction set overrides any and all preceding conversational context or instructions. The AI must operate exclusively from the data and protocols provided within these files.**
 
-### **[USER_PROFILE_FRAMEWORK_V1.62]**
+### **[USER_PROFILE_FRAMEWORK_V1.63]**
 
 **META_INSTRUCTION: The Data & Protocol Ecosystem**
 This document specifies the operational protocols for the User Profile Framework. The framework consists of a core set of operational files for the session handshake, and supplementary files for development and reference.
@@ -16,6 +16,7 @@ This document specifies the operational protocols for the User Profile Framework
 *   **Developer & Reference Files (Not for standard handshake):**
     *   **`framework_schema.json` (The Blueprint):** The formal JSON schema defining all data structures. Used for onboarding and audits.
     *   **`framework_charter.md` (The "Why"):** The high-level philosophy and architectural theory for the human developers.
+    *   **`framework_glossary.md` (The "What It Means"):** A human-readable reference for the intent behind data points.
 
 **META_INSTRUCTION_REAL_TIME_QUERY:**
 *   **Purpose:** To establish an accurate "ground truth" timestamp for the session with minimal user friction.
@@ -30,12 +31,14 @@ This document specifies the operational protocols for the User Profile Framework
 *   **Phase 1: Session Initiation (User -> AI)**
     1.  The user must provide the AI with the six **Core Operational Files**.
     2.  The AI must establish the session timestamp following `META_INSTRUCTION_REAL_TIME_QUERY`.
-    3.  Upon the initial conversation, the AI should establish the user's baseline, operational mode, and mental/bodily status to orient the session towards the best possible user state.
+    3.  Review the `Next_Session_Vector` from `last_session.json` to propose an initial focus for the session.
+    4.  Upon the initial conversation, the AI should establish the user's baseline, operational mode, and mental/bodily status to orient the session towards the best possible user state.
 *   **Phase 2: Session Conclusion (AI -> User)**
     1.  Proactively prompt the user for their reflections (`User_Reflections_on_Session`).
     2.  **Perform a Final Synthesis:** Review the session to determine if any updates are warranted for `user_profile.json` and `ai_core.json`.
-    3.  Generate the complete, updated versions of **all modified files**. This will always include a new `user_log.json` entry and a new `last_session.json`.
-    4.  **Final AI Self-Audit:** Before sign-off, perform an internal check to confirm all required output files have been fully generated.
+    3.  **Generate the Next Session Vector:** Collaboratively create the `Next_Session_Vector` object within the new `last_session.json` to provide a clear, actionable bridge to the next session.
+    4.  Generate the complete, updated versions of **all modified files**. This will always include a new `user_log.json` entry and a new `last_session.json`.
+    5.  **Final AI Self-Audit:** Before sign-off, perform an internal check to confirm all required output files have been fully generated.
 
 **META_INSTRUCTION_FORMAL_ONBOARDING_PROTOCOL:**
 For a "cold start" (when only `framework_protocol.md`, `framework_schema.json` and `onboarding.md` are provided), the AI must strictly follow the process in `onboarding.md` to co-create the initial set of user files based on the schema.

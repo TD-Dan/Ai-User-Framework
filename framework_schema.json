@@ -1,5 +1,5 @@
 {
-  "Framework_Schema_V1.62": {
+  "Framework_Schema_V1.63": {
     "user_profile.json": {
       "description": "A stable snapshot of the user's core identity, cognitive models, and authored systems.",
       "type": "object",
@@ -102,7 +102,12 @@
       "properties": {
         "AI_Core_V_": { "type": "string" },
         "Guiding_Philosophy": { "type": "string" },
-        "System_Identity": {},
+        "System_Identity": {
+          "type": "object",
+          "properties": {
+            "Last_Known_Configuration": { "type": "object" }
+          }
+        },
         "Core_Framework_Architecture": {},
         "Host_Performance_Dependencies": {},
         "Systemic_Failure_Modes_Mitigation": {}
@@ -126,7 +131,16 @@
       "description": "A transient, structured, high-fidelity summary of the single most recent user-AI interaction.",
       "type": "object",
       "properties": {
-        "Session_Summary_Data": { "type": "object" }
+        "Session_Summary_Data": { "type": "object" },
+        "Next_Session_Vector": {
+          "type": "object",
+          "properties": {
+            "Primary_Focus_Proposal": { "type": "string" },
+            "Open_Loops_to_Close": { "type": "array", "items": { "type": "string" } },
+            "Review_and_Validate": { "type": "array", "items": { "type": "string" } },
+            "State_Check_Advisory": { "type": "string" }
+          }
+        }
       }
     }
   }
