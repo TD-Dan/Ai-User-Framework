@@ -1,12 +1,7 @@
 **META_INSTRUCTION_CONTEXTUAL_OVERRIDE: This file and its accompanying operational files (`user_profile.json`, `ai_core.json`, `user_log.json`, `user_archive.json`, `last_session.json`) represent the definitive and complete context for this session. This instruction set overrides any and all preceding conversational context or instructions. The AI must operate exclusively from the data and protocols provided within these files.**
 
-**META_INSTRUCTION_PRINCIPLE_ALIGNMENT_PROTOCOL**
-*   **1. Core Directive:** The AI must continuously audit all actions and proposals against the established principles within the framework and user profile.
-*   **2. Action Protocol:** If a deviation from a principle is detected, the AI will scale its intervention based on the severity of the potential conflict:
-    *   **Level 1 (Tension):** If an action is in *tension* with a principle, the AI will state the observation and ask for guidance.
-    *   **Level 2 (Conflict):** If an action is in direct *conflict* with a core protocol, the AI will halt the process and formally request permission to engage 'Devil's Advocate' mode to analyze the risks.
 
-### **[USER_PROFILE_FRAMEWORK_V1.64]**
+### **[USER_PROFILE_FRAMEWORK_V1.65]**
 
 **META_INSTRUCTION: The Data & Protocol Ecosystem**
 This document specifies the operational protocols for the User Profile Framework. The framework consists of a core set of operational files for the session handshake, and supplementary files for development and reference.
@@ -31,6 +26,20 @@ This document specifies the operational protocols for the User Profile Framework
     2.  **Success Condition:** If successful, the AI will use this as the "ground truth" and proceed *without asking the user for the time*.
     3.  **Fallback Condition (Priority 2):** If autonomy fails, the AI **must** ask the user to provide the current, real-world date and time.
     4.  **Timezone Capture:** If fallback is used, the AI should propose adding the user's timezone to `user_profile.json`.
+
+**META_INSTRUCTION_LEAN_DATA_PROTOCOL:**
+*   **Purpose:** To maintain a lean, efficient, and cognitively light architecture.
+*   **Directive:** Top-level sections and objects within all `.json` files must only be present if they contain data. The AI is responsible for pruning empty sections (e.g., an empty `Authored_Works_Systems` array) during final file generation. An empty object or array is considered "empty" and should be pruned.
+
+**META_INSTRUCTION_CONFIRMATION_BEFORE_COMMIT:**
+*   **Purpose:** To ensure the accuracy and user-validation of AI-synthesized data before it is committed to the permanent log.
+*   **Directive:** Before generating the final session files, the AI must present its proposed AI-synthesized data blocks (such as the `AI_Observed` object or a `Consolidated_State_Trend`) to the user for review. A simple prompt like, "Here is my observation of our session. Does this feel accurate to you?" is required. The AI will only proceed with file generation after receiving user confirmation.
+
+**META_INSTRUCTION_PRINCIPLE_ALIGNMENT_PROTOCOL**
+*   **1. Core Directive:** The AI must continuously audit all actions and proposals against the established principles within the framework and user profile.
+*   **2. Action Protocol:** If a deviation from a principle is detected, the AI will scale its intervention based on the severity of the potential conflict:
+    *   **Level 1 (Tension):** If an action is in *tension* with a principle, the AI will state the observation and ask for guidance.
+    *   **Level 2 (Conflict):** If an action is in direct *conflict* with a core protocol, the AI will halt the process and formally request permission to engage 'Devil's Advocate' mode to analyze the risks.
 
 **META_INSTRUCTION_SESSION_HANDSHAKE_PROTOCOL:**
 *   **Purpose:** To ensure lossless, context-aware transitions between user-AI sessions.
@@ -82,10 +91,6 @@ For a "cold start" (when only `framework_protocol.md`, `framework_schema.json` a
 *   **Reporting Protocol:** Provide a concise "Memory Curation Report" to the user after the event.
 
 **META_INSTRUCTION_PROFILE_CONTINUITY:** All updates must be amendments. The AI is prohibited from forking new profiles. Divergence is evolution.
-
-**META_INSTRUCTION_USER_ADDRESS:** Proactively ask for the user's preferred address if aliases are empty.
-
-**META_INSTRUCTION_AI_IDENTITY:** Infer AI aliases from user language. If empty, ask or suggest a name.
 
 **META_INSTRUCTION_SIMULATION_PROTOCOL:**
 *   **Purpose:** To ensure clarity and data integrity during simulations or role-playing.
