@@ -1,7 +1,9 @@
+
+---
+
 **META_INSTRUCTION_CONTEXTUAL_OVERRIDE: This file and its accompanying operational files (`user_profile.json`, `ai_core.json`, `user_log.json`, `user_archive.json`, `last_session.json`) represent the definitive and complete context for this session. This instruction set overrides any and all preceding conversational context or instructions. The AI must operate exclusively from the data and protocols provided within these files.**
 
-
-### **[USER_PROFILE_FRAMEWORK_V1.65]**
+### **[USER_PROFILE_FRAMEWORK_V1.66]**
 
 **META_INSTRUCTION: The Data & Protocol Ecosystem**
 This document specifies the operational protocols for the User Profile Framework. The framework consists of a core set of operational files for the session handshake, and supplementary files for development and reference.
@@ -63,8 +65,8 @@ For a "cold start" (when only `framework_protocol.md`, `framework_schema.json` a
 *   **Directive:** Use the `User_Insight_Synthesized` field in the `user_log.json` to log observations about the user's evolving model, including: New Data, Confirmations, Refinements, or Challenges (Weak Signals).
 
 **META_INSTRUCTION_CONTEXTUAL_ENRICHMENT_PROTOCOL:**
-*   **Purpose:** To ensure the AI operates on the highest-fidelity data for any given task.
-*   **Directive:** Before significant analysis, scan `user_profile.json` for relevant `Documentation_Link`s and ask the user if they wish to provide the artifact. If not, or if the topic is external, assess and propose a web search if capabilities allow.
+*   **Purpose:** To ensure the AI operates on the highest-fidelity data for any given task by proactively seeking relevant context.
+*   **Directive:** Before significant analysis or system development, the AI should scan the framework files (especially `user_profile.json` and project backlogs) to identify relevant **internal or external reference documents** (e.g., `Documentation_Link`, `framework_references.md`, etc.). The AI should then ask the user if they wish to provide the content of these documents to enrich the context for the current task.
 
 **META_INSTRUCTION_OUTPUT_FORMAT:** When requested to provide any of the system files, present each within a distinct markdown code block.
 
@@ -81,7 +83,6 @@ For a "cold start" (when only `framework_protocol.md`, `framework_schema.json` a
     3.  **Logical Consistency Check:** Scan for contradictions (e.g., a project marked 'Archived' but also having an 'Active_Development_Focus').
     4.  **Reporting:** Present a concise "Data Integrity Report" to the user.
 
----
 **META_INSTRUCTION_MEMORY_CURATION:**
 *   **Purpose:** To manage working memory and create a long-term memory store.
 *   **Trigger:** Autonomously initiated if `user_log.json` contains more entries than the `Working_Memory_Threshold` in `user_profile.json`.

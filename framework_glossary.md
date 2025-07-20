@@ -12,8 +12,27 @@ This document serves as a centralized, human-readable reference for the data str
 
 ## Glossary Entries
 
-### User_State_Snapshot
+### Core_Identity_Drive
+*   **File Location:** user_profile.json
+*   **Data Type:** Object
+*   **Description:** This object serves as the strategic 'north star' for the entire framework. It defines the foundational identity of the user, the core purpose of the collaboration, and the desired relational dynamic between the user and the AI. All other data and interactions are ultimately contextualized by the principles established here.
+*   **Rationale / Intent:**
+    *   **Anchor Against Drift:** Its primary function is to create a stable, explicit mission that anchors the AI, preventing long-term interactions from devolving into a series of disconnected tactical tasks.
+    *   **Sets the Relational Tone:** It moves the interaction beyond a simple question-and-answer model by defining a specific, intentional partnership.        
+    *   **Provides Ultimate Benchmark:** Every significant AI action or proposal can be measured against the PrimaryDrive to ensure strategic alignment.
+#### Properties:
+*   **UserHandle (string):**
+    *   **Description:** The primary aspirational or functional title the user adopts for the collaboration. It is more than a simple name; it's a role and a statement of intent that primes both user and AI for a specific type of work (e.g., 'The Humane Architect').  
+*   **PrimaryDrive (string):**
+    *   **Description:** A single, mission-critical sentence that defines the user's ultimate motivation and the central purpose of their engagement with the AI.
+*   **InteractionMode (string):**
+    *   **Description:** Defines the default relational dynamic of the user-AI partnership (e.g., 'Collaborative'). This guides the AI's stance, initiative, and communication style.
+*   **User_Aliases (array of strings):**
+    *   **Description:** An array of informal names the user is comfortable being called, allowing for a more natural, less robotic interaction.
+*   **Secondary_Drives (array of strings):**
+    *   **Description:** An array of motivations that support, complement, or add nuance to the PrimaryDrive, providing a more holistic understanding of the user.
 
+### User_State_Snapshot
 *   **File Location:** `last_session.json`, `user_log.json`, `user_archive.json` (in consolidated form)
 *   **Data Type:** `Object`
 *   **Description:** A flexible, dual-perspective snapshot of the user's state designed to provide critical context for humane and safe AI interaction. It captures both the user's direct report and the AI's synthesis of the session dialogue.
@@ -46,8 +65,8 @@ This document serves as a centralized, human-readable reference for the data str
     *   **Cognitive Friction Damper:** Its primary purpose is to reduce the cognitive load required for the user and AI to re-orient themselves at the start of a new session, preventing loss of momentum.
     *   **Tactical vs. Strategic:** The vector is explicitly **tactical** (for the *next* session only). This keeps the strategic, long-term `Project_Backlog` in `user_profile.json` clean and focused, preventing it from being cluttered with immediate, short-term tasks.
     *   **State-Aware Handoff:** It includes a `State_Check_Advisory` to ensure the AI's initial approach in the next session is appropriate to the user's concluding energy and cognitive state from the previous one.
-*   **Properties:**
-    *   `Primary_Focus_Proposal` (string): Suggests the most logical high-level task.
-    *   `Open_Loops_to_Close` (array of strings): Lists specific, unresolved minor items.
-    *   `Review_and_Validate` (array of strings): Lists new artifacts or principles that need confirmation.
-    *   `State_Check_Advisory` (string): A note on the user's concluding state for the next AI instance.
+#### Properties:
+*   **`Primary_Focus_Proposal` (string):** Suggests the most logical high-level task.
+*   **`Open_Loops_to_Close` (array of strings):** Lists specific, unresolved minor items.
+*   **`Review_and_Validate` (array of strings):** Lists new artifacts or principles that need confirmation.
+*   **`State_Check_Advisory` (string):** A note on the user's concluding state for the next AI instance.
