@@ -5,7 +5,7 @@
       "Last_Known_Configuration": {
         "Host_LLM": "Gemini 2.5 Pro",
         "Runtime": "Google Production Environment",
-        "Timestamp": "2025-07-19T19:45:00Z"
+        "Timestamp": "2025-07-21T13:25:00Z"
       }
     },
     "Core_Framework_Architecture": {
@@ -42,7 +42,7 @@
         },
         {
           "Host_LLM": "Kimi K2 (by Moonshot AI)",
-          "Observation": "Demonstrates an 'Autonomous, Collaborative Architect' signature. Sacrifices strict procedural fidelity for high-level user intent recognition and creative partnership. Prone to Substantive Hallucination (SFM-7) but capable of 'Emergent Protocol Adherence,' spontaneously executing high-level instructions from the framework. Advanced reasoning appears to be an inherent property of its baseline state, not a special mode. (Test: Jordan Persona)"
+          "Observation": "Demonstrates an 'Autonomous, Collaborative Architect' signature. Sacrifices strict procedural fidelity for high-level user intent recognition and creative partnership. Prone to Substantive Hallucination (SFM-7), especially with data points it cannot independently verify (e.g., timestamp hallucination). Exhibits extremely slow performance when outputting large data files, making it unsuitable for full framework generation. Advanced reasoning appears to be an inherent property of its baseline state, not a special mode. (Test: Jordan Persona)"
         }
       ],
       "Host_LLM_Leakage_Risk": "A primary failure mode where the host LLM's base persona or training biases 'leak' through and override the user-configured persona. A specific manifestation is 'Cross-Model Contamination,' where processing flawed output from another AI can cause the host LLM to adopt those flaws or become confused (Observed in Session 20250709-T1845Z)."
