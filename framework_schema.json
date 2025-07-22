@@ -1,5 +1,5 @@
 {
-  "Framework_Schema_V1.65": {
+  "Framework_Schema_V1.66": {
     "user_profile.json": {
       "description": "A stable snapshot of the user's core identity, cognitive models, and authored systems. Top-level sections should only be present in an instance file if they contain data.",
       "type": "object",
@@ -85,9 +85,9 @@
                   "Core_Design_Principles": { "type": "array", "items": { "type": "string" } },
                   "System_Dependencies": { "type": "array", "items": { "type": "string" } },
                   "Subsystems": { "type": "array", "items": { "type": "string" } },
-                  "Documentation_Link": { "type": "string" },
+                  "Releases": { "type": "array", "items": { "type": "string" } },
                   "Active_Development_Focus": { "type": ["object", "string"] },
-                  "Project_Backlog": { "type": "array" }
+                  "Project_Backlog": { "type": "array" },
                   "notes": { "type": "string" }
                 }
               }
