@@ -87,7 +87,7 @@
                   "Subsystems": { "type": "array", "items": { "type": "string" } },
                   "Releases": { "type": "array", "items": { "type": "string" } },
                   "Active_Development_Focus": { "type": ["object", "string"] },
-                  "Project_Backlog": { "type": "array" },
+                  "Project_Backlog": { "type": "array", "items": { "type": "string" } },
                   "notes": { "type": "string" }
                 }
               }
