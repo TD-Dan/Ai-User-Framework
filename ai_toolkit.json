@@ -114,11 +114,12 @@
     {
       "Tool_Name": "Specialized Agent Delegation",
       "Technique_Family": "Meta-System Management",
-      "Ideal_Use_Case": "Assigning a complex, fire-and-forget task to a purpose-built AI persona (e.g., Sigurd) on its native host, then ingesting the completed work product for analysis.",
+      "Ideal_Use_Case": "Assigning a complex, fire-and-forget task to a purpose-built AI persona to leverage its unique cognitive strengths and avoid the primary AI's biases.",
+      "Operational_Definition": "This is a user-mediated protocol to leverage an external AI's unique cognitive profile. The process is as follows: 1. **Briefing:** The primary AI assists the user in preparing the task and the specialist persona files. 2. **External Execution:** The user runs the prompt on the specialist persona's native host platform. This is a parallel operation. 3. **Debriefing:** The user provides the raw output from the external AI, which the primary AI then ingests and analyzes.",
       "Cost_Profile": {
         "Tokens": "Variable (depends on task)",
-        "Latency": "Very High (asynchronous)",
-        "Scaffolding": "Requires managing persona files across different hosts."
+        "Latency": "Very Low (Parallel Operation)",
+        "Scaffolding": "Requires managing persona files across hosts and user access to the target AI platform."
       },
       "Status": "Available"
     },
