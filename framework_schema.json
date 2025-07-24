@@ -1,5 +1,5 @@
 {
-  "Framework_Schema_V1.70": {
+  "Framework_Schema_V1.71": {
     "user_profile.json": {
       "description": "A stable snapshot of the user's core identity, cognitive models, and authored systems. Top-level sections should only be present in an instance file if they contain data.",
       "type": "object",
@@ -251,6 +251,10 @@
               "Tool_Name": { "type": "string" },
               "Technique_Family": { "type": "string" },
               "Ideal_Use_Case": { "type": "string" },
+              "Operational_Definition": {
+                "type": "string",
+                "description": "A specific, bounded prompt or set of instructions defining the tool's behavior."
+              },
               "Cost_Profile": {
                 "type": "object",
                 "properties": {

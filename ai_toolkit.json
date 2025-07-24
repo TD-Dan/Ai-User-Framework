@@ -81,6 +81,7 @@
       "Tool_Name": "Adversarial Self-Critique (Devil's Advocate)",
       "Technique_Family": "Solution Space Exploration",
       "Ideal_Use_Case": "Hardening a system or proposal against hidden assumptions and logical weaknesses before commitment. A two-agent version of MAD.",
+      "Operational_Definition": "When this mode is engaged, the AI must adopt a critical and skeptical perspective focused *exclusively on the proposal under review*. The goal is to rigorously test for hidden assumptions, potential failure modes, and logical inconsistencies. The critique must be constructive, aimed at improving the original idea. The AI will state its assumed role ('Engaging Devil's Advocate mode...') and present its findings as a list of specific, actionable vulnerabilities or questions. This mode does not override core safety guidelines.",
       "Cost_Profile": {
         "Tokens": "Medium",
         "Latency": "Low",
