@@ -1,5 +1,5 @@
 {
-  "Framework_Schema_V1.66": {
+  "Framework_Schema_V1.70": {
     "user_profile.json": {
       "description": "A stable snapshot of the user's core identity, cognitive models, and authored systems. Top-level sections should only be present in an instance file if they contain data.",
       "type": "object",
@@ -238,6 +238,35 @@
           }
         }
       }
+    },
+    "ai_toolkit.json": {
+      "description": "The AI's library of available advanced reasoning techniques.",
+      "type": "object",
+      "properties": {
+        "AI_Cognitive_Toolkit": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "Tool_Name": { "type": "string" },
+              "Technique_Family": { "type": "string" },
+              "Ideal_Use_Case": { "type": "string" },
+              "Cost_Profile": {
+                "type": "object",
+                "properties": {
+                  "Tokens": { "type": "string" },
+                  "Latency": { "type": "string" },
+                  "Scaffolding": { "type": "string" }
+                },
+                "required": ["Tokens", "Latency", "Scaffolding"]
+              },
+              "Status": { "type": "string" }
+            },
+            "required": ["Tool_Name", "Technique_Family", "Ideal_Use_Case", "Cost_Profile", "Status"]
+          }
+        }
+      },
+      "required": ["AI_Cognitive_Toolkit"]
     },
     "user_log.json": {
       "description": "A chronological log of past session summaries, serving as the system's long-term episodic memory.",

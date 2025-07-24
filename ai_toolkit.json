@@ -1,0 +1,114 @@
+{
+  "AI_Cognitive_Toolkit": [
+    {
+      "Tool_Name": "Chain-of-Thought (CoT) Prompting",
+      "Technique_Family": "Linear Augmentation",
+      "Ideal_Use_Case": "Enhancing reasoning for multi-step math, logic, or code-generation tasks where a single misstep can cascade. [1, 4]",
+      "Cost_Profile": {
+        "Tokens": "Medium",
+        "Latency": "Low",
+        "Scaffolding": "None for basic application (e.g., 'think step-by-step')."
+      },
+      "Status": "Available"
+    },
+    {
+      "Tool_Name": "Step-Back Prompting",
+      "Technique_Family": "Linear Augmentation",
+      "Ideal_Use_Case": "Problems in physics, law, or any domain where clarifying the underlying first principles is beneficial before diving into specifics. [2, 7]",
+      "Cost_Profile": {
+        "Tokens": "Low",
+        "Latency": "Low",
+        "Scaffolding": "None. Can be applied directly in the prompt."
+      },
+      "Status": "Available"
+    },
+    {
+      "Tool_Name": "Self-Refine / Meta-Prompting",
+      "Technique_Family": "Agentic Loops & Tool Use",
+      "Ideal_Use_Case": "Iteratively improving the quality of a generated output, such as code review, essay revision, or any task where quality is prioritized over speed. [31, 41]",
+      "Cost_Profile": {
+        "Tokens": "Medium (scales with iterations)",
+        "Latency": "Medium",
+        "Scaffolding": "None. Can be managed via a prompt loop."
+      },
+      "Status": "Available"
+    },
+    {
+      "Tool_Name": "System 2 Attention (S2A)",
+      "Technique_Family": "Input Refinement",
+      "Ideal_Use_Case": "Long-context retrieval tasks where distractor information is present, such as analyzing legal briefs or technical support logs. [8, 10]",
+      "Cost_Profile": {
+        "Tokens": "High (requires two full passes)",
+        "Latency": "High",
+        "Scaffolding": "None. Managed via a two-step prompt."
+      },
+      "Status": "Available"
+    },
+    {
+      "Tool_Name": "Skeleton-of-Thought (SoT)",
+      "Technique_Family": "Solution Space Exploration",
+      "Ideal_Use_Case": "Reducing latency in long-form report generation where sections are largely independent. [9, 11]",
+      "Cost_Profile": {
+        "Tokens": "Medium",
+        "Latency": "Low (due to parallelization)",
+        "Scaffolding": "Requires careful prompt templating."
+      },
+      "Status": "Available"
+    },
+    {
+      "Tool_Name": "EmotionPrompt",
+      "Technique_Family": "Linear Augmentation",
+      "Ideal_Use_Case": "Attempting to gain a small performance boost on single-shot creative or open-ended tasks. [24, 28]",
+      "Cost_Profile": {
+        "Tokens": "Very Low",
+        "Latency": "None",
+        "Scaffolding": "None."
+      },
+      "Status": "Available"
+    },
+    {
+      "Tool_Name": "ReAct (Reason + Act)",
+      "Technique_Family": "Agentic Loops & Tool Use",
+      "Ideal_Use_Case": "Powering autonomous agents that require live, external data (e.g., stock prices, weather) or interaction with APIs. [6, 15]",
+      "Cost_Profile": {
+        "Tokens": "Variable",
+        "Latency": "Variable (depends on tool speed)",
+        "Scaffolding": "Is a core capability of the host AI."
+      },
+      "Status": "Internal (Core Capability)"
+    },
+    {
+      "Tool_Name": "Tree of Thoughts (ToT)",
+      "Technique_Family": "Solution Space Exploration",
+      "Ideal_Use_Case": "Solving complex problems with branching possibilities, like creative writing with multiple plot lines or strategic planning. [3, 5]",
+      "Cost_Profile": {
+        "Tokens": "Very High (Exponential)",
+        "Latency": "Very High",
+        "Scaffolding": "Requires external code to manage the tree search."
+      },
+      "Status": "Unavailable (Requires Scaffolding)"
+    },
+    {
+      "Tool_Name": "Graph of Thoughts (GoT)",
+      "Technique_Family": "Solution Space Exploration",
+      "Ideal_Use_Case": "Advanced research synthesis where ideas can merge, be refined, or cross-pollinate in a non-linear fashion.",
+      "Cost_Profile": {
+        "Tokens": "Extremely High",
+        "Latency": "Extremely High",
+        "Scaffolding": "Requires significant external code to manage the graph state."
+      },
+      "Status": "Unavailable (Requires Scaffolding)"
+    },
+    {
+      "Tool_Name": "Multi-Agent Debate (MAD)",
+      "Technique_Family": "Solution Space Exploration",
+      "Ideal_Use_Case": "Policy analysis or complex ideation where dialectical tension between multiple, distinct personas is likely to improve the final output. [40, 42]",
+      "Cost_Profile": {
+        "Tokens": "Extremely High",
+        "Latency": "Extremely High",
+        "Scaffolding": "Requires significant external code to manage agents and debate rounds."
+      },
+      "Status": "Unavailable (Requires Scaffolding)"
+    }
+  ]
+}
