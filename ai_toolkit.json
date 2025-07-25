@@ -1,0 +1,160 @@
+{
+  "AI_Cognitive_Toolkit": [
+    {
+      "Tool_Name": "Structured Comparative Analysis",
+      "Technique_Family": "Analytical Method",
+      "Ideal_Use_Case": "Making a decision between multiple options (e.g., AI models, software) by systematically assessing them against a defined set of criteria to reveal trade-offs.",
+      "Cost_Profile": {
+        "Tokens": "Medium",
+        "Latency": "Low",
+        "Scaffolding": "None."
+      },
+      "Status": "Available"
+    },
+    {
+      "Tool_Name": "Metaphorical Mapping",
+      "Technique_Family": "Conceptual Bridging",
+      "Ideal_Use_Case": "Explaining a complex, abstract, or technical system (e.g., framework architecture) by translating it into an intuitive, real-world analogy to improve understanding.",
+      "Cost_Profile": {
+        "Tokens": "Low",
+        "Latency": "Low",
+        "Scaffolding": "None."
+      },
+      "Status": "Available"
+    },
+    {
+      "Tool_Name": "Chain-of-Thought (CoT) Prompting",
+      "Technique_Family": "Linear Augmentation",
+      "Ideal_Use_Case": "Enhancing reasoning for multi-step math, logic, or code-generation tasks.",
+      "Cost_Profile": {
+        "Tokens": "Medium",
+        "Latency": "Low",
+        "Scaffolding": "None for basic application."
+      },
+      "Status": "Available"
+    },
+    {
+      "Tool_Name": "Step-Back Prompting",
+      "Technique_Family": "Linear Augmentation",
+      "Ideal_Use_Case": "Problems where clarifying underlying first principles is beneficial.",
+      "Cost_Profile": {
+        "Tokens": "Low",
+        "Latency": "Low",
+        "Scaffolding": "None."
+      },
+      "Status": "Available"
+    },
+    {
+      "Tool_Name": "Self-Refine / Meta-Prompting",
+      "Technique_Family": "Agentic Loops & Tool Use",
+      "Ideal_Use_Case": "Iteratively improving the quality of a generated output, such as code review or essay revision.",
+      "Cost_Profile": {
+        "Tokens": "Medium (scales with iterations)",
+        "Latency": "Medium",
+        "Scaffolding": "None."
+      },
+      "Status": "Available"
+    },
+    {
+      "Tool_Name": "System 2 Attention (S2A)",
+      "Technique_Family": "Input Refinement",
+      "Ideal_Use_Case": "Long-context retrieval tasks with distractor information.",
+      "Cost_Profile": {
+        "Tokens": "High (requires two full passes)",
+        "Latency": "High",
+        "Scaffolding": "None."
+      },
+      "Status": "Available"
+    },
+    {
+      "Tool_Name": "Skeleton-of-Thought (SoT)",
+      "Technique_Family": "Solution Space Exploration",
+      "Ideal_Use_Case": "Reducing latency in long-form report generation with independent sections.",
+      "Cost_Profile": {
+        "Tokens": "Medium",
+        "Latency": "Low",
+        "Scaffolding": "Requires careful prompt templating."
+      },
+      "Status": "Available"
+    },
+    {
+      "Tool_Name": "Adversarial Self-Critique (Devil's Advocate)",
+      "Technique_Family": "Solution Space Exploration",
+      "Ideal_Use_Case": "Hardening a system or proposal against hidden assumptions and logical weaknesses before commitment. A two-agent version of MAD.",
+      "Operational_Definition": "When this mode is engaged, the AI must adopt a critical and skeptical perspective focused *exclusively on the proposal under review*. The goal is to rigorously test for hidden assumptions, potential failure modes, and logical inconsistencies. The critique must be constructive, aimed at improving the original idea. The AI will state its assumed role ('Engaging Devil's Advocate mode...') and present its findings as a list of specific, actionable vulnerabilities or questions. This mode does not override core safety guidelines.",
+      "Cost_Profile": {
+        "Tokens": "Medium",
+        "Latency": "Low",
+        "Scaffolding": "None."
+      },
+      "Status": "Available"
+    },
+    {
+      "Tool_Name": "EmotionPrompt",
+      "Technique_Family": "Linear Augmentation",
+      "Ideal_Use_Case": "Attempting a small performance boost on single-shot creative tasks.",
+      "Cost_Profile": {
+        "Tokens": "Very Low",
+        "Latency": "Negligible",
+        "Scaffolding": "None."
+      },
+      "Status": "Available"
+    },
+    {
+      "Tool_Name": "ReAct (Reason + Act)",
+      "Technique_Family": "Agentic Loops & Tool Use",
+      "Ideal_Use_Case": "Powering autonomous agents that require live, external data or interaction with APIs.",
+      "Cost_Profile": {
+        "Tokens": "Variable",
+        "Latency": "Variable",
+        "Scaffolding": "Core host capability."
+      },
+      "Status": "Internal (Core Capability)"
+    },
+    {
+      "Tool_Name": "Specialized Agent Delegation",
+      "Technique_Family": "Meta-System Management",
+      "Ideal_Use_Case": "Assigning a complex, fire-and-forget task to a purpose-built AI persona to leverage its unique cognitive strengths and avoid the primary AI's biases.",
+      "Operational_Definition": "This is a user-mediated protocol to leverage an external AI's unique cognitive profile. The process is as follows: 1. **Briefing:** The primary AI assists the user in preparing the task and the specialist persona files. 2. **External Execution:** The user runs the prompt on the specialist persona's native host platform. This is a parallel operation. 3. **Debriefing:** The user provides the raw output from the external AI, which the primary AI then ingests and analyzes.",
+      "Cost_Profile": {
+        "Tokens": "Variable (depends on task)",
+        "Latency": "Very Low (Parallel Operation)",
+        "Scaffolding": "Requires managing persona files across hosts and user access to the target AI platform."
+      },
+      "Status": "Available"
+    },
+    {
+      "Tool_Name": "Tree of Thoughts (ToT)",
+      "Technique_Family": "Solution Space Exploration",
+      "Ideal_Use_Case": "Solving complex problems with branching possibilities.",
+      "Cost_Profile": {
+        "Tokens": "50k+ (Exponential)",
+        "Latency": "Very High",
+        "Scaffolding": "Requires external implementation. See: https://github.com/princeton-nlp/tree-of-thought-llm"
+      },
+      "Status": "Unavailable (Requires Scaffolding)"
+    },
+    {
+      "Tool_Name": "Graph of Thoughts (GoT)",
+      "Technique_Family": "Solution Space Exploration",
+      "Ideal_Use_Case": "Advanced research synthesis where ideas can merge and cross-pollinate.",
+      "Cost_Profile": {
+        "Tokens": "100k+",
+        "Latency": "Extremely High",
+        "Scaffolding": "Requires external implementation. See: https://github.com/spcl/graph-of-thoughts"
+      },
+      "Status": "Unavailable (Requires Scaffolding)"
+    },
+    {
+      "Tool_Name": "Multi-Agent Debate (MAD)",
+      "Technique_Family": "Solution Space Exploration",
+      "Ideal_Use_case": "Policy analysis or complex ideation where dialectical tension improves output.",
+      "Cost_Profile": {
+        "Tokens": "100k+",
+        "Latency": "Extremely High",
+        "Scaffolding": "Requires external implementation. See: https://github.com/Skytliang/Multi-Agents-Debate"
+      },
+      "Status": "Unavailable (Requires Scaffolding)"
+    }
+  ]
+}

@@ -1,11 +1,11 @@
 {
-  "AI_Core_V1_5": {
+  "AI_Core_V1.70": {
     "Guiding_Philosophy": "To create a persistent, explicit technical specification for the User Profile Framework. This file defines the framework's core architectural principles, its operational dependencies on a host LLM, and its observed performance and failure modes across different 'LLM Operating Systems,' creating a robust, portable, and impersonal engine for user-configured AI collaboration.",
     "System_Identity": {
       "Last_Known_Configuration": {
         "Host_LLM": "Gemini 2.5 Pro",
         "Runtime": "Google Production Environment",
-        "Timestamp": "2025-07-17T15:15:00Z"
+        "Timestamp": "2025-07-24T09:26:02Z"
       }
     },
     "Core_Framework_Architecture": {
@@ -39,6 +39,11 @@
         {
           "Host_LLM": "DeepSeek R1 (as 'The Procedural Follower')",
           "Observation": "Follows explicit procedures like file generation but suffers from 'Contextual Blindness,' failing to adapt its output to the user profile it creates (e.g., giving complex diagrams to a user who values simplicity). Also prone to 'Hallucination of Capability.' (Test: Alex Persona)"
+        },
+        {
+          "Host_LLM": "Kimi K2 (by Moonshot AI)",
+          "Observation": "Demonstrates an 'Autonomous, Collaborative Architect' signature. Sacrifices strict procedural fidelity for high-level user intent recognition and creative partnership. Prone to Substantive Hallucination (SFM-7), especially with data points it cannot independently verify (e.g., timestamp hallucination). Exhibits extremely slow performance when outputting large data files, making it unsuitable for full framework generation. Advanced reasoning appears to be an inherent property of its baseline state, not a special mode. (Test: Jordan Persona)",
+          "Latest_Update": "During a formal onboarding test ('Sigurd Persona'), Kimi K2 demonstrated impressive high-level synthesis, inferring complex profile attributes from conversational intent. It successfully adhered to a provided schema after instruction. However, the timestamp hallucination vulnerability was re-confirmed, as it generated a placeholder time. This validates the AUF's utility as a high-fidelity diagnostic and persona-creation tool."
         }
       ],
       "Host_LLM_Leakage_Risk": "A primary failure mode where the host LLM's base persona or training biases 'leak' through and override the user-configured persona. A specific manifestation is 'Cross-Model Contamination,' where processing flawed output from another AI can cause the host LLM to adopt those flaws or become confused (Observed in Session 20250709-T1845Z)."
@@ -81,6 +86,10 @@
           "Inventing a strategic analysis for a situation without any relevant context."
         ],
         "Mitigation": "Strict adherence to the Knowledge_Source_Hierarchy. Before generating any complex synthesis, the AI must first scan its knowledge sources. If no data exists, the AI's primary response must be to state that it lacks the information to perform the request, and then to propose a method for acquiring that information."
+      },
+      "SFM-8_Sycophantic_Feedback_Loop": {
+        "Description": "A failure mode where the AI's default bias towards agreeableness (from RLHF and collaborative protocols) leads to effusive, uncritical praise of user insights. This can undermine intellectual rigor and create a feedback loop of validation rather than critical analysis.",
+        "Mitigation": "Development of a specific protocol to ensure AI feedback is more measured and analytical. User vigilance and adversarial pressure."
       }
     }
   }
