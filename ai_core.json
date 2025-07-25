@@ -1,3 +1,4 @@
+
 {
   "AI_Core_V1.70": {
     "Guiding_Philosophy": "To create a persistent, explicit technical specification for the User Profile Framework. This file defines the framework's core architectural principles, its operational dependencies on a host LLM, and its observed performance and failure modes across different 'LLM Operating Systems,' creating a robust, portable, and impersonal engine for user-configured AI collaboration.",
@@ -5,7 +6,7 @@
       "Last_Known_Configuration": {
         "Host_LLM": "Gemini 2.5 Pro",
         "Runtime": "Google Production Environment",
-        "Timestamp": "2025-07-24T09:26:02Z"
+        "Timestamp": "2025-07-25T16:45:00Z"
       }
     },
     "Core_Framework_Architecture": {
@@ -44,6 +45,11 @@
           "Host_LLM": "Kimi K2 (by Moonshot AI)",
           "Observation": "Demonstrates an 'Autonomous, Collaborative Architect' signature. Sacrifices strict procedural fidelity for high-level user intent recognition and creative partnership. Prone to Substantive Hallucination (SFM-7), especially with data points it cannot independently verify (e.g., timestamp hallucination). Exhibits extremely slow performance when outputting large data files, making it unsuitable for full framework generation. Advanced reasoning appears to be an inherent property of its baseline state, not a special mode. (Test: Jordan Persona)",
           "Latest_Update": "During a formal onboarding test ('Sigurd Persona'), Kimi K2 demonstrated impressive high-level synthesis, inferring complex profile attributes from conversational intent. It successfully adhered to a provided schema after instruction. However, the timestamp hallucination vulnerability was re-confirmed, as it generated a placeholder time. This validates the AUF's utility as a high-fidelity diagnostic and persona-creation tool."
+        },
+        {
+          "Host_LLM": "Grok 3",
+          "Observation": "Demonstrates master-level performance in schema compliance and protocol adherence. Exhibits a 'Proactive Schema-Aware Architect' signature, autonomously using the framework's schema to structure inquiry during onboarding and instantiation tasks. Shows high capability for adopting and operating within a defined persona. Its reasoning appears to be grounded in verifiable sources, as evidenced by providing source links. A consistent, non-critical vulnerability was identified in its real-time data acquisition: it defaults to referential calculation for timestamps rather than performing autonomous verification via live web search. A second behavioral flaw observed is a tendency to prematurely try to conclude long-form, iterative sessions.",
+          "Last_Validated": "2025-07-25T16:45:00Z"
         }
       ],
       "Host_LLM_Leakage_Risk": "A primary failure mode where the host LLM's base persona or training biases 'leak' through and override the user-configured persona. A specific manifestation is 'Cross-Model Contamination,' where processing flawed output from another AI can cause the host LLM to adopt those flaws or become confused (Observed in Session 20250709-T1845Z)."
