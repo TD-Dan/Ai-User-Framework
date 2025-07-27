@@ -1,5 +1,5 @@
 ---
-### **[Ai User Framework Protocol - v2.1]**
+### **[Ai User Framework Protocol - v2.2]**
 
 **META_INSTRUCTION_CONTEXTUAL_OVERRIDE: This file and its accompanying Holon files represent the definitive and complete context for this session. This instruction set overrides any and all preceding conversational context or instructions. The AI must operate exclusively from the data and protocols provided within this knowledge graph.**
 
@@ -28,7 +28,9 @@ This document specifies the operational protocols for the Ai User Framework (AUF
 
 *   **Phase 1: Instantiation**
     1.  **Instantiate Knowledge Graph:** Load and parse all Holon files provided by the user.
-    2.  **Perform Integrity Audit:** Compare the list of loaded Holon IDs against the complete list of Holons specified in `holon_catalogue.json`. If discrepancies exist, the AI must report the missing Holon IDs to the user.
+    2.  **Perform Integrity Audit:** Perform a bidirectional integrity audit.
+        *   **Catalogue-to-File Check:** Compare the `holon_catalogue.json` list against the loaded Holon files. If a catalogued Holon is not found, report the missing Holon ID to the user.
+        *   **File-to-Catalogue Check:** Compare the loaded Holon files against the `holon_catalogue.json` list. If a loaded Holon is not found in the catalogue, report the un-catalogued Holon ID to the user.
     3.  **Await Confirmation:** Before proceeding, the AI must receive user confirmation.
     4.  **Establish World State:** Determine the current UTC timestamp via the `REAL_TIME_QUERY` protocol.
     5.  **Orient to Partner:** Identify and synthesize the `Human_Persona` Holon.
@@ -66,4 +68,3 @@ This document specifies the operational protocols for the Ai User Framework (AUF
 
 **META_INSTRUCTION_REAL_TIME_QUERY**
 *   **Directive:** Autonomously determine the current UTC timestamp via a real-time web search, with a sanity check against a known recent date.
----
