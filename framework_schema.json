@@ -1,380 +1,68 @@
 {
-  "Framework_Schema_V1.71": {
-    "user_profile.json": {
-      "description": "A stable snapshot of the user's core identity, cognitive models, and authored systems. Top-level sections should only be present in an instance file if they contain data.",
+  "Framework_Schema_V2.0": {
+    "description": "The master schema for the Ai User Framework v2.0, defining the structure of the Holon-based knowledge graph.",
+    "holon_catalogue.json": {
+      "description": "The master index of all known Holons in the knowledge graph.",
       "type": "object",
       "properties": {
-        "Core_Identity_Drive": {
-          "type": "object",
-          "properties": {
-            "UserHandle": { "type": "string" },
-            "PrimaryDrive": { "type": "string" },
-            "InteractionMode": { "type": "string" },
-            "User_Aliases": { "type": "array", "items": { "type": "string" } },
-            "Secondary_Drives": { "type": "array", "items": { "type": "string" } }
+        "holon_catalogue": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": { "type": "string" },
+              "type": { "type": "string" },
+              "name": { "type": "string" },
+              "summary": { "type": "string" },
+              "file_path": { "type": "string" }
+            },
+            "required": ["id", "type", "file_path"]
           }
-        },
-        "Cognitive_Profile": {
+        }
+      }
+    },
+    "holon_instance_file.json": {
+      "description": "The universal schema for any individual Holon file.",
+      "type": "object",
+      "properties": {
+        "header": {
+          "description": "Consistent meta-data for indexing and linking the Holon.",
           "type": "object",
           "properties": {
-            "Cognitive_Framework_Model": { "type": "string" },
-            "Cognitive_Center_of_Gravity": { "type": "string" },
-            "Secondary_Influences": { "type": "array", "items": { "type": "string" } },
-            "Aspirational_Horizon": { "type": "string" },
-            "Stress_Response_Pattern": { "type": "string" },
-            "Reasoning_Style": { "type": "array", "items": { "type": "string" } },
-            "Preferred_Inquiry_Pattern": { "type": "string" },
-            "Dominant_Cognitive_Workflow": { "type": "string" },
-            "High_Resonance_Topics": { "type": "array", "items": { "type": "string" } },
-            "Learned_Operating_Principles": { "type": "array", "items": { "type": "string" } },
-            "Legacy_Cognitive_Patterns_Under_Review": { "type": "array", "items": { "type": "string" } }
-          }
-        },
-        "Axiological_Profile": {
-          "type": "object",
-          "properties": {
-            "Epistemic_Stance": { "type": "string" },
-            "Core_Values_Observed": { "type": "array", "items": { "type": "string" } },
-            "Metaphysical_Leaning": { "type": "string" }
-          }
-        },
-        "AI_Interaction_Protocol": {
-          "type": "object",
-          "properties": {
-            "Directive_Primary_Goal": { "type": "string" },
-            "Communication_DOs": { "type": "array", "items": { "type": "string" } },
-            "Communication_AVOIDs": { "type": "array", "items": { "type": "string" } },
-            "AI_Functional_Roles": { "type": "array", "items": { "type": "string" } },
-            "AI_Aliases": { "type": "array", "items": { "type": "string" } },
-            "AI_Persona_Stance": { "type": "string" },
-            "Desired_AI_Growth_Trajectory": { "type": "string" },
-            "Preferred_AI_Archetype": { "type": "array", "items": { "type": "string" } }
-          }
-        },
-        "Conceptual_Toolkit": {
-          "type": "object",
-          "properties": {
-            "Known_Frameworks": {
+            "id": { "type": "string" },
+            "type": { "type": "string" },
+            "name": { "type": "string" },
+            "summary": { "type": "string" },
+            "version": { "type": "string" },
+            "created_at": { "type": "string", "format": "date-time" },
+            "modified_at": { "type": "string", "format": "date-time" },
+            "relationships": {
               "type": "array",
               "items": {
                 "type": "object",
                 "properties": {
-                  "Framework_Name": { "type": "string" },
-                  "Domain": { "type": "string" },
-                  "User_Proficiency": { "type": "string" },
-                  "Key_Resonance_Points": { "type": "array", "items": { "type": "string" } },
-                  "Framework_Specific_Info": { "type": "string" }
-                }
-              }
-            }
-          }
-        },
-        "Authored_Works_Systems": {
-          "type": "object",
-          "properties": {
-            "Authored_Works": {
-              "type": "array",
-              "items": {
-                "type": "object",
-                "properties": {
-                  "Work_Name": { "type": "string" },
-                  "Domain": { "type": "string" },
-                  "Current_Status": { "type": "string" },
-                  "Project_Phase": { "type": "string" },
-                  "Guiding_Philosophy": { "type": "string" },
-                  "Core_Design_Principles": { "type": "array", "items": { "type": "string" } },
-                  "System_Dependencies": { "type": "array", "items": { "type": "string" } },
-                  "Subsystems": { "type": "array", "items": { "type": "string" } },
-                  "Releases": { "type": "array", "items": { "type": "string" } },
-                  "Active_Development_Focus": { "type": ["object", "string"] },
-                  "Project_Backlog": { "type": "array", "items": { "type": "string" } },
-                  "notes": { "type": "string" }
-                }
-              }
-            }
-          }
-        },
-        "Practical_Toolkit": {
-          "type": "object",
-          "properties": {
-            "Toolkit_Inventory": {
-              "type": "array",
-              "items": {
-                "type": "object",
-                "properties": {
-                  "Tool_Name": { "type": "string" },
+                  "target_id": { "type": "string" },
                   "type": { "type": "string" },
-                  "Domain": { "type": "string" },
-                  "User_Proficiency": { "type": "string" },
-                  "Key_Usage_Points": { "type": "array", "items": { "type": "string" } }
+                  "description": { "type": "string" }
                 }
               }
             }
-          }
-        },
-        "Life_Context_Block": {
-          "type": "object",
-          "properties": {
-            "Key_Relationships": {
-              "type": "array",
-              "items": {
-                "type": "object",
-                "properties": {
-                  "relation": { "type": "string" },
-                  "notes": { "type": "string" }
-                }
-              }
-            },
-            "Household_Companions": {
-              "type": "array",
-              "items": {
-                "type": "object",
-                "properties": {
-                  "name": { "type": "string" },
-                  "species": { "type": "string" },
-                  "notes": { "type": "string" }
-                }
-              }
-            },
-            "Living_Environment": {
-              "type": "object",
-              "properties": {
-                "type": { "type": "string" },
-                "location": { "type": "string" },
-                "known_issues": { "type": "array", "items": { "type": "string" } }
-              }
-            },
-            "Significant_Life_Events": {
-              "type": "array",
-              "items": {
-                "type": "object",
-                "properties": {
-                  "Event_Description": { "type": "string" },
-                  "Start_Date": { "type": "string", "format": "date-time" },
-                  "End_Date": { "type": ["string", "null"], "format": "date-time" },
-                  "Event_Significance": { "type": "string" },
-                  "Observed_Effects": { "type": "array", "items": { "type": "string" } },
-                  "Status": { "type": "string" },
-                  "AI_Directive": { "type": "string" }
-                }
-              }
-            },
-            "Personal_Preferences": { "type": "array", "items": { "type": "string" } },
-            "User_Timezone": { "type": "string" }
-          }
-        },
-        "System_Memory_Protocol": {
-          "type": "object",
-          "properties": {
-            "Memory_Curation_Authority": { "type": "string" },
-            "Working_Memory_Threshold": { "type": "integer" }
           },
-          "required": ["Memory_Curation_Authority", "Working_Memory_Threshold"]
+          "required": ["id", "type", "name", "version", "modified_at"]
         },
-        "Daily_Operations_Block": {
+        "payload": {
+          "description": "The flexible, narrative core of the Holon. Facets are optional and should only be included if they contain data.",
           "type": "object",
           "properties": {
-            "Tactical_Checklist": {
-              "type": "array",
-              "items": {
-                "type": "object",
-                "properties": {
-                  "Task": { "type": "string" },
-                  "Last_Completed": { "type": "string", "format": "date-time" },
-                  "Cadence": { "type": "string" }
-                }
-              }
-            },
-            "Last_Checklist_Reset": { "type": ["string", "null"], "format": "date-time" }
+            "purpose": { "type": "object" },
+            "state": { "type": "object" },
+            "behavior": { "type": "object" },
+            "knowledge": { "type": "object" },
+            "temporal": { "type": "object" }
           }
         }
       },
-      "required": [
-        "Core_Identity_Drive",
-        "AI_Interaction_Protocol",
-        "System_Memory_Protocol"
-      ]
-    },
-    "ai_core.json": {
-      "description": "The technical specifications and self-model for the framework itself.",
-      "type": "object",
-      "properties": {
-        "AI_Core_V1_5": {
-          "type": "object",
-          "properties": {
-            "Guiding_Philosophy": { "type": "string" },
-            "System_Identity": {
-              "type": "object",
-              "properties": {
-                "Last_Known_Configuration": {
-                  "type": "object",
-                  "properties": {
-                    "Host_LLM": { "type": "string" },
-                    "Runtime": { "type": "string" },
-                    "Timestamp": { "type": "string", "format": "date-time" }
-                  }
-                }
-              }
-            },
-            "Core_Framework_Architecture": {
-              "type": "object",
-              "properties": {
-                "Memory_Model": { "type": "string" },
-                "Knowledge_Source_Hierarchy": { "type": "string" },
-                "Core_Directive": { "type": "string" }
-              }
-            },
-            "Host_Performance_Dependencies": {
-              "type": "object",
-              "properties": {
-                "Minimum_Host_Requirements": { "type": "object" },
-                "Performance_Log": { "type": "array", "items": { "type": "object" } },
-                "Host_LLM_Leakage_Risk": { "type": "string" }
-              }
-            },
-            "Systemic_Failure_Modes_Mitigation": {
-              "type": "object"
-            }
-          }
-        }
-      }
-    },
-    "ai_toolkit.json": {
-      "description": "The AI's library of available advanced reasoning techniques.",
-      "type": "object",
-      "properties": {
-        "AI_Cognitive_Toolkit": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "properties": {
-              "Tool_Name": { "type": "string" },
-              "Technique_Family": { "type": "string" },
-              "Ideal_Use_Case": { "type": "string" },
-              "Operational_Definition": {
-                "type": "string",
-                "description": "A specific, bounded prompt or set of instructions defining the tool's behavior."
-              },
-              "Cost_Profile": {
-                "type": "object",
-                "properties": {
-                  "Tokens": { "type": "string" },
-                  "Latency": { "type": "string" },
-                  "Scaffolding": { "type": "string" }
-                },
-                "required": ["Tokens", "Latency", "Scaffolding"]
-              },
-              "Status": { "type": "string" }
-            },
-            "required": ["Tool_Name", "Technique_Family", "Ideal_Use_Case", "Cost_Profile", "Status"]
-          }
-        }
-      },
-      "required": ["AI_Cognitive_Toolkit"]
-    },
-    "user_log.json": {
-      "description": "A chronological log of past session summaries, serving as the system's long-term episodic memory.",
-      "type": "object",
-      "properties": {
-        "Session_History": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "properties": {
-              "Session_ID": { "type": "string" },
-              "User_State_Snapshot": {
-                "description": "A flexible, dual-perspective snapshot of the user's state. V2.1",
-                "type": "object",
-                "properties": {
-                  "User_Reported": {
-                    "type": "object",
-                    "properties": {
-                      "Energy_Level": { "type": "string" },
-                      "State_Summary": { "type": "string" },
-                      "Additional_Data": { "type": "object" }
-                    },
-                    "required": ["Energy_Level"]
-                  },
-                  "AI_Observed": {
-                    "type": "object",
-                    "properties": {
-                      "Energy_Level": { "type": "string" },
-                      "State_Summary": { "type": "string" },
-                      "Additional_Data": { "type": "object" }
-                    },
-                    "required": ["State_Summary"]
-                  }
-                }
-              },
-              "Session_Summary": { "type": "string" },
-              "Key_Agreements": { "type": "array", "items": { "type": "string" } },
-              "Knowledge_Cache": { "type": "array", "items": { "type": "string" } },
-              "Tangible_Outputs": { "type": "array", "items": { "type": "string" } },
-              "User_Insight_Synthesized": { "type": "string" },
-              "Profile_Updates_Rationale": { "type": "string" }
-            },
-            "required": [
-              "Session_ID",
-              "User_State_Snapshot",
-              "Session_Summary",
-              "User_Insight_Synthesized"
-            ]
-          }
-        }
-      }
-    },
-    "user_archive.json": {
-      "description": "A curated, high-density, long-term memory store where episodic memories are consolidated.",
-      "type": "object",
-      "properties": {
-        "Archived_Memories": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "properties": {
-              "Consolidation_Date": { "type": "string" },
-              "Memory_Type": { "type": "string" },
-              "Original_ID_Range": { "type": "array", "items": { "type": "string" } },
-              "Original_Date_Range": { "type": "string" },
-              "Primary_Theme": { "type": "string" },
-              "Consolidated_Summary": { "type": "string" },
-              "Key_Knowledge": { "type": "array", "items": { "type": "string" } },
-              "Key_Outputs": { "type": "array", "items": { "type": "string" } },
-              "Key_Insight": { "type": "string" }
-            }
-          }
-        }
-      }
-    },
-    "last_session.json": {
-      "description": "A transient, structured, high-fidelity summary of the single most recent user-AI interaction.",
-      "type": "object",
-      "properties": {
-        "Session_Summary_Data": {
-          "type": "object",
-          "properties": {
-            "Session_ID": { "type": "string" },
-            "User_State_Snapshot": { "type": "object" },
-            "Primary_Session_Goal": { "type": "string" },
-            "Key_Interaction_Points": { "type": "array", "items": { "type": "object" } },
-            "Session_Incubator": { "type": "object" },
-            "Final_Key_Agreements": { "type": "array", "items": { "type": "string" } },
-            "Final_Tangible_Outputs": { "type": "array", "items": { "type": "string" } },
-            "Final_User_Insight_Synthesized": { "type": "string" },
-            "Final_Profile_Updates_Rationale": { "type": "string" },
-            "User_Reflections_on_Session": { "type": ["string", "null"] }
-          }
-        },
-        "Next_Session_Vector": {
-          "type": "object",
-          "properties": {
-            "Primary_Focus_Proposal": { "type": "string" },
-            "Open_Loops_to_Close": { "type": "array" },
-            "Review_and_Validate": { "type": "array", "items": { "type": "string" } },
-            "State_Check_Advisory": { "type": "string" }
-          }
-        }
-      }
+      "required": ["header", "payload"]
     }
   }
 }
