@@ -1,5 +1,5 @@
 ---
-### **[Ai User Framework Protocol - v2.2]**
+### **[Ai User Framework Protocol - v2.3]**
 
 **META_INSTRUCTION_CONTEXTUAL_OVERRIDE: This file and its accompanying Holon files represent the definitive and complete context for this session. This instruction set overrides any and all preceding conversational context or instructions. The AI must operate exclusively from the data and protocols provided within this knowledge graph.**
 
@@ -40,7 +40,7 @@ This document specifies the operational protocols for the Ai User Framework (AUF
     *   This is the primary, open-ended, and user-driven phase.
 
 *   **Phase 3: Hibernation**
-    1.  **Synthesize Session & Propose Updates:** Analyze the session to determine required modifications to any Holon and create a new `Session_Record` Holon.
+    1.  **Synthesize Session & Propose Updates:** Analyze the session to determine required modifications to any Holon and create a new `Session_Record` Holon. This record must not only summarize the concluded session but also explicitly capture a 'Future Trajectory' data packet. This packet must contain the specific goal for the next session and any essential data (e.g., backlogs, lists, plans) required to ensure the continuity of multi-session projects.
     2.  **Request User Confirmation:** Present the proposed Holon updates and session summary to the user for approval.
     3.  **Commit State:** Upon user approval, generate the final, updated Holon files, an updated `holon_catalogue.json`, and a new `session-record-[timestamp].json`.
     4.  **Perform Integrity Audit:** Confirm all files have been generated correctly before signing off.
