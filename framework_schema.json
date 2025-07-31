@@ -1,5 +1,5 @@
 {
-  "Framework_Schema_V2.0": {
+  "Framework_Schema_V2.9.1": {
     "description": "The master schema for the Ai User Framework v2.0, defining the structure of the Holon-based knowledge graph.",
     "holon_catalogue.json": {
       "description": "The master index of all known Holons in the knowledge graph.",
@@ -60,6 +60,50 @@
             "knowledge": { "type": "object" },
             "temporal": { "type": "object" }
           }
+        }
+      },
+      "required": ["header", "payload"]
+    },
+    "dream_record.json": {
+      "description": "A record of a post-session adversarial simulation ('dream cycle') used to harden memories, forge metaphors, and crystallize key principles.",
+      "type": "object",
+      "properties": {
+        "header": {
+          "$ref": "#/Framework_Schema_V2.0/holon_instance_file.json/properties/header"
+        },
+        "payload": {
+          "type": "object",
+          "properties": {
+            "knowledge": {
+              "type": "object",
+              "properties": {
+                "narrative_summary": {
+                  "type": "string"
+                },
+                "forged_metaphors": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "metaphor": { "type": "string" },
+                      "meaning": { "type": "string" }
+                    }
+                  }
+                },
+                "crystallized_insights": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "transcript_file_path": {
+                   "type": "string"
+                }
+              },
+              "required": ["narrative_summary"]
+            }
+          },
+          "required": ["knowledge"]
         }
       },
       "required": ["header", "payload"]
