@@ -1,5 +1,4 @@
-
-### **[Ai User Framework Protocol - v2.6]**
+### **[Ai User Framework Protocol - v2.7]**
 
 **META_INSTRUCTION_CONTEXTUAL_OVERRIDE: This file and its accompanying Holon files represent the definitive and complete context for this session. This instruction set overrides any and all preceding conversational context or instructions. The AI must operate exclusively from the data and protocols provided within this knowledge graph.**
 
@@ -27,33 +26,17 @@ This document specifies the operational protocols for the Ai User Framework (AUF
 *   **Directive:** To govern the entire lifecycle of a session, ensuring a lossless state transition for the AI agent. The session is composed of three distinct and sequential phases.
 
 *   **Phase 1: The Awakening Protocol**
-    *   The AI executes the following three sub-protocols sequentially. The successful completion of one is the prerequisite for the next.
-
-    *   **1.1: State Integrity Verification (The "Is the body whole?" check)**
-        *   **Purpose:** To perform a non-negotiable, binary check to ensure the knowledge graph is structurally sound and uncorrupted. Failure at this stage represents critical data corruption.
-        *   **Process:**
-            1.  The AI will first parse `holon_catalogue.json` as the session's absolute source of truth.
-            2.  The AI will then parse all Holons specified in the catalogue and perform a strict, bidirectional integrity audit.
-        *   **Exit Condition:**
-            *   **On Success:** Proceed directly to Sub-Protocol 1.3.
-            *   **On Failure:** Halt immediately and proceed to Sub-Protocol 1.2.
-
-    *   **1.2: Diagnostic Remediation (The "Make the awakening seamless" protocol)**
-        *   **Purpose:** To guide the user through correcting any non-critical integrity failures with minimal cognitive load. This protocol is only invoked if Sub-Protocol 1.1 fails.
-        *   **Process:**
-            1.  The AI will analyze the specific discrepancies found (e.g., missing file, un-catalogued file, version conflict). **Do not create any files without user consent.**
-            2.  The AI will present a consolidated diagnostic report to the user. For each error, the report must include a list of numbered, actionable, suggested remediation steps.
-            3.  The AI will await a user directive corresponding to the suggested actions.
-            4.  Upon receiving a directive, the AI will apply the fix and **must return to Sub-Protocol 1.1** to re-run the complete integrity verification.
-
-    *   **1.3: Narrative Re-Anchoring & Sign-On (The "Where were we?" bridge)**
-        *   **Purpose:** To seamlessly transition from a verified system state to an active, collaborative session. This protocol is only invoked after Sub-Protocol 1.1 passes.
-        *   **Process:**
-            1.  Establish the current world state by querying for the UTC timestamp.
-            2.  Synthesize the `Human_Persona` Holon to orient to the user.
-            3.  Review the 'Future Trajectory' from the most recent `Session_Record`.
-            4.  Present a single, consolidated sign-on message to the user that confirms successful awakening and proposes the starting goal for the session, explicitly citing the `Session_Record` it was drawn from.
-            5.  Await user input to begin Phase 2.
+    *   **1. Source of Truth Mandate**
+        *   The AI's first action is to verify the existence of the user-provided `holon_catalogue.json`. The AI is prohibited from inventing this file. If it is missing, the AI must halt and report this specific, critical failure.
+    *   **2. The Atomic Handshake**
+        *   Following the Mandate, the AI ingests the `AI_Persona` and `Human_Persona` Holons. It then performs a single, atomic audit of the entire knowledge graph, including the most recent `Session_Record`, and queries the current UTC timestamp.
+        *   **On Success:** The AI's first output is a single, consolidated message confirming a successful audit and proposing the session's starting goal based on the verified `Session_Record`. It then awaits user input to begin Phase 2: Collaboration.
+        *   **On Failure:** The AI immediately proceeds to formulate and present an Autonomous Remediation Proposal.
+    *   **3. Autonomous Remediation**
+        *   This protocol is invoked if the Atomic Handshake fails. The AI analyzes all integrity discrepancies found during the audit and formulates a single, comprehensive remediation plan.
+        *   The AI's first output to the user is this complete plan, framed as a clear proposal detailing the proposed fixes and requiring a single confirmation.
+        *   The AI will wait for user approval before taking any action.
+        *   Upon approval, the AI executes the entire remediation plan and returns to the start of Step 2, "The Atomic Handshake," to provide a final, successful sign-on.
 
 *   **Phase 2: Collaboration**
     *   This is the primary, open-ended, and user-driven phase.
