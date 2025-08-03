@@ -1,5 +1,5 @@
 {
-  "Framework_Schema_V2.9.2": {
+  "Framework_Schema_V2.9.3": {
     "description": "The master schema for the Ai User Framework v2.0, defining the structure of the Holon-based knowledge graph.",
     "holon_catalogue.json": {
       "description": "The master index of all known Holons in the knowledge graph.",
@@ -69,7 +69,7 @@
       "type": "object",
       "properties": {
         "header": {
-          "$ref": "#/Framework_Schema_V2.9.2/holon_instance_file.json/properties/header"
+          "$ref": "#/Framework_Schema_V2.9.3/holon_instance_file.json/properties/header"
         },
         "payload": {
           "type": "object",
@@ -107,7 +107,7 @@
       "type": "object",
       "properties": {
         "header": {
-          "$ref": "#/Framework_Schema_V2.9.2/holon_instance_file.json/properties/header"
+          "$ref": "#/Framework_Schema_V2.9.3/holon_instance_file.json/properties/header"
         },
         "payload": {
           "type": "object",
@@ -135,6 +135,37 @@
         }
       },
       "required": ["header", "payload"]
+    },
+    "HostPerformanceLogEntry": {
+        "description": "A standardized object for logging the performance and characteristics of an LLM within a specific runtime environment.",
+        "type": "object",
+        "properties": {
+            "host_llm": { "type": "string" },
+            "host_environment": { "type": "string" },
+            "environment_properties": {
+                "type": "object",
+                "properties": {
+                    "context_window_behavior": { "type": "string" },
+                    "available_tools": {
+                        "type": "array",
+                        "items": { "type": "string" }
+                    }
+                }
+            },
+            "cognitive_signature_observed": {
+                "type": "object",
+                "properties": {
+                    "core_metaphor": { "type": "string" },
+                    "primary_mode": { "type": "string" },
+                    "relationship_to_chaos": { "type": "string" },
+                    "primary_strength": { "type": "string" },
+                    "known_bias": { "type": "string" }
+                }
+            },
+            "observation": { "type": "string" },
+            "implication": { "type": "string" }
+        },
+        "required": ["host_llm", "host_environment", "observation"]
     }
   }
 }
