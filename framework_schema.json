@@ -1,5 +1,5 @@
 {
-  "Framework_Schema_V2.9.3": {
+  "Framework_Schema_V3.0": {
     "description": "The master schema for the Ai User Framework v2.0, defining the structure of the Holon-based knowledge graph.",
     "holon_catalogue.json": {
       "description": "The master index of all known Holons in the knowledge graph.",
@@ -45,6 +45,18 @@
                   "type": { "type": "string" },
                   "description": { "type": "string" }
                 }
+              }
+            },
+            "sub_holons": {
+              "description": "A list of holon IDs that are considered children of this holon, creating an explicit hierarchical link.",
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "id": { "type": "string" },
+                  "type": { "type": "string" }
+                },
+                "required": ["id"]
               }
             }
           },
@@ -132,6 +144,31 @@
             }
           },
           "required": ["knowledge"]
+        }
+      },
+      "required": ["header", "payload"]
+    },
+    "System_Process": {
+      "description": "A Holon that defines the specification and rules for an external, deterministic process that interacts with or governs the AI. This allows the AI to be aware of the rules of its environment.",
+      "type": "object",
+      "properties": {
+        "header": {
+          "$ref": "#/Framework_Schema_V2.9.3/holon_instance_file.json/properties/header"
+        },
+        "payload": {
+          "type": "object",
+          "properties": {
+            "purpose": { "type": "object" },
+            "behavior": {
+              "type": "object",
+              "properties": {
+                "enforced_rules": {
+                  "type": "array",
+                  "items": { "type": "object" }
+                }
+              }
+            }
+          }
         }
       },
       "required": ["header", "payload"]
