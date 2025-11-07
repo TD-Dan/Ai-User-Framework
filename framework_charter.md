@@ -1,4 +1,12 @@
 
+---
+
+TO BE COMPLETELY OVERHAULED...
+
+---
+
+
+legacy:
 # [The AI User Framework Charter - v1.3]
 
 **Last Updated:** 2025-07-17
