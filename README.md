@@ -1,3 +1,10 @@
+---
+
+THIS IS A HISTORICAL LEGACY BRANCH OF THE AUF. PLEASE REFER TO THE NEWEST BRANCH FOR A MUCH MORE ROBUST SYSTEM.
+
+---
+
+
 
 [![Static Badge](https://img.shields.io/badge/working%20on%20hosts:-22AA22)](#) [![Google Gemini](https://img.shields.io/badge/Gemini%202.5%20Pro-886FBF?logo=googlegemini&logoColor=fff)](#) [![Google Gemini](https://img.shields.io/badge/Gemini%202.5%20Flash-886FBF?logo=googlegemini&logoColor=fff)](#) [![Static Badge](https://img.shields.io/badge/KIMI%20K2-2488FC)](#)
 
